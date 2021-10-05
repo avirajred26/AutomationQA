@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test  name="Test">
+  <parameter name="browser" value ="Chrome"></parameter>
+    <classes>
+      <class name="testcasae.TC001_Login_Cred"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
