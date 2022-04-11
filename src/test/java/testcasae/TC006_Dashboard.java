@@ -67,7 +67,7 @@ public class TC006_Dashboard extends TestBase {
 		objappli = new DashBoardPage(driver);
 		Thread.sleep(5000);
 		
-		objappli.getStatusDashboardValue();
+		
 		
 		
 		

@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
 import base.PageBase;
@@ -15,31 +16,32 @@ public class AccountCreationPage extends PageBase {
 	String usernames[];
 	
 	//table[1]/tbody[1]/tr[1]/td[1]/input[@name='new_email']
-	@FindBy(xpath = "//table[1]/tbody[1]/tr[1]/td[1]/input[@name='new_email']")
+	@FindBy(xpath = "//input[@id='email']")
 	WebElement email;
 	
-	@FindBy(xpath = "//table[1]/tbody[1]/tr[2]/td[1]/input[@name='new_name']")
+	@FindBy(xpath = "//input[@id='first-name']")
 	WebElement name;
 	
-	@FindBy(xpath = "//table[1]/tbody[1]/tr[4]/td[1]/input[@name='new_userPassword']")
-	WebElement password;
+	@FindBy(xpath = "//input[@id='last-name']")
+	WebElement lastname;
 	
-	@FindBy(xpath = "//table[1]/tbody[1]/tr[6]/td[1]/div/select")
-	WebElement campign;
+	@FindBy(xpath = "(//div[@class='select__menu-list css-11unzgr'])[1]")
+	List <WebElement> parent_Company;
 	
 	@FindBy(xpath = "//table[1]/tbody[1]/tr[7]/td[1]/select")
 	WebElement profess;
 	
-	@FindBy(xpath = "//table[1]/tbody[1]/tr[5]/td[1]/select")
-	WebElement role;
+	@FindBy(xpath = "(//div[@class='select__menu-list css-11unzgr'])[1]")
+	List <WebElement> role;
 	
 	
-	@FindBy(xpath = "//body/div[@id='root']/div[1]/div[2]/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[6]/div[1]/div[1]/div[1]/button[1]")
+	
+	@FindBy(xpath = "//button[normalize-space()='Create & Invite User']")
 	WebElement createBtn;
 	
 	
-	@FindBy(xpath = "//button[contains(text(),'Upload Excel')]")
-	WebElement bulkUpload;
+	@FindBy(xpath = "//div[@class='select__menu-list select__menu-list--is-multi css-11unzgr'])[1]")
+	List <WebElement> select_Companies;
 	
 	
 	@FindBy(xpath = "//input[@id='file']")
@@ -58,8 +60,7 @@ public class AccountCreationPage extends PageBase {
 	@FindBy(xpath = "//table[@class='table table-striped table-hover']/tbody/tr")
 	List <WebElement> DetailTable;
 	
-	private By uuid = By.id("username");
-By uuu = 	By.xpath("//a[contains(text(),'Create User /Agent')]");
+
 
 	
 	
@@ -72,22 +73,41 @@ By uuu = 	By.xpath("//a[contains(text(),'Create User /Agent')]");
 	
 	public AccountCreationPage(WebDriver driver) {
 		setWebDriver(driver);
-		System.out.println(uuid);
+	
 		
 	}
 	
 	
 	
-	public void singleCreateAccount(String Type, String Email, String Password, String Name,String Campign, String Profession) {
+	public void singleCreateAccount() {
 		
-		String em = TestUtil.getCurrentDate();
-		email.sendKeys(Email + em.replace("/", ""));
-		name.sendKeys(Name + em.replace("/", ""));
-		password.sendKeys(Password);
-		TestUtil.selectItemByVisibleText(role, Type);
-		TestUtil.selectItem(campign,1);
-		TestUtil.selectItem(profess, 1);
+		Actions actions = new Actions(pbDriver); 
 		
+	jsExecutorClickOn(pbDriver.findElement(By.xpath("//span[normalize-space()='User Management']")));
+		email.sendKeys("testuserqa12@yopmail.com");
+		name.sendKeys("Tester");
+		lastname.sendKeys("QA");
+		
+		
+		
+	
+		actions.moveToElement(pbDriver.findElement(By.xpath("(//div[@class='select__value-container select__value-container--has-value css-1hwfws3'])[1]"))); 
+	    actions.clickAndHold().perform();
+	    
+	    TestUtil.selectBYList(role, "User");
+		
+	    actions.moveToElement(pbDriver.findElement(By.xpath("(//div[@class='select__value-container css-1hwfws3'])[1]"))); 
+	    actions.clickAndHold().perform();
+		
+
+	    TestUtil.selectBYList(parent_Company, "Credgenics");
+		//TestUtil.selectItem(parent_Company, 16);
+	    
+	    actions.moveToElement(pbDriver.findElement(By.xpath("(//div[@class='select__value-container select__value-container--is-multi css-1hwfws3'])[1]"))); 
+	    actions.clickAndHold().perform();
+	    TestUtil.selectBYList(select_Companies, "Credgenics");
+		
+		//TestUtil.selectItem(select_Companies, 10);
 		
 		createBtn.click();
 		
@@ -95,40 +115,6 @@ By uuu = 	By.xpath("//a[contains(text(),'Create User /Agent')]");
 	}
 	
 	
-	public void bulkCreationAccount() {
-		usernames = ExcelLibraries.getUserNames();
-	
-		jsExecutorClickOn(bulkUpload);
-		
-		chooseFile.sendKeys(System.getProperty("user.dir")+ "/src/main/java/config/new_agent.xlsx");
-		
-		clickOnElement(uploadFile);
-		
-		uploadFile.sendKeys(Keys.ENTER);
-		
-		
-		int count = DetailTable.size();
-		int j = 0;
-		
-		for(int i = 0; i<=count;i++) {
-			j=i+1;
-			WebElement userDetail = pbDriver.findElement(By.xpath("//table[@class='table table-striped table-hover']/tbody/tr["+j+"]//td[1]"));
-			WebElement statusMsg = pbDriver.findElement(By.xpath("//table[@class='table table-striped table-hover']/tbody/tr["+j+"]//td[3]"));
-		
-			
-			String UserName = usernames[i].replace("\"", "");
-			UserName = UserName.replace("\"", "");
-		
-			if(UserName.equalsIgnoreCase(userDetail.getText())) {
-				if(!statusMsg.getText().equalsIgnoreCase("success")) {
-					System.out.println("Error in "+userDetail.getText().toString() +" Check Error -  "+statusMsg.getText() );
-					
-				}
-			}
-		}
-		
-		
-	}
 
 	
 	
@@ -138,12 +124,6 @@ By uuu = 	By.xpath("//a[contains(text(),'Create User /Agent')]");
 	
 	public void createAcount(String Method ,String Type, String Email, String Password, String Name,String Campign, String Profession ) {
 		
-		jsExecutorClickOn(clickOnTab);
 		
-		
-		if(Method.contains("Single")) {
-			singleCreateAccount(Type, Email, Password, Name, Campign, Profession);
-		}else
-			bulkCreationAccount();
 	}
 }

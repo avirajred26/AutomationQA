@@ -5,7 +5,22 @@
   <test name="Test">
     <parameter name="browser" value="Chrome"/>
     <classes>
-      <class name="testcasae.TC006_Dashboard"/>
+      <class name="Heirachy.HC_Company_Creation_01"/>
     </classes>
   </test> <!-- Test -->
+  <test parallel="none" name="Test(failed)">
+    <parameter name="browser" value="Chrome"/>
+    <classes>
+      <class name="Heirachy.HC_Company_Creation_01">
+        <methods>
+          <include name="getFunctionName"/>
+          <include name="createCompnay"/>
+          <include name="launchApplication"/>
+          <include name="extentFileCreation"/>
+          <include name="loginTest"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- Heirachy.HC_Company_Creation_01 -->
+    </classes>
+  </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

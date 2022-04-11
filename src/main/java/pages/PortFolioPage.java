@@ -33,7 +33,7 @@ public class PortFolioPage extends PageBase {
 	@FindBy(xpath = "//input[@id='searchKeyword']")
 	public WebElement searchType;
 	
-	public static WebElement eloan;
+	public static WebElement eloan,loancount;
 	public static String loanNumber;
 	
 	@FindBy(xpath = "//input[@id='searchKeyword']")
@@ -48,7 +48,10 @@ public class PortFolioPage extends PageBase {
 	@FindBy(xpath = "//div[@class='year-month-wrapper']//div[@class='year-month']//div")
 	public List<WebElement> monthPicker;
 	
+	@FindBy(xpath = "//div[@class='mt-4 ml-4 card-title']")
+	public WebElement totalLoanCount;
 	
+	//div[@class='mt-4 ml-4 card-title']
 	
 	@FindBy(xpath = "//input[@id='all']")
 	public WebElement selectAll;

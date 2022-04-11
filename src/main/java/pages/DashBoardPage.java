@@ -5,42 +5,60 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
+import org.testng.Assert;
 
 import base.PageBase;
 
+import subClasses.AnalyticDashBoardData;
+
 public class DashBoardPage extends PageBase {
-	
-	
-	@FindBy(xpath = "//*[local-name() = 'svg']/*[name()='g' and @class = 'highcharts-axis-labels highcharts-xaxis-labels']/*[name() = 'text'][@text-anchor='end']")
-	List<WebElement> statusXAxis;
-	
-	@FindBy(xpath = "//*[local-name() = 'svg']//*[name()='g' and @class = 'highcharts-series highcharts-series-0 highcharts-column-series highcharts-tracker']/*[name() = 'rect']")
-	List<WebElement> statusXAxisBar;
-	
 	
 
 	
 	
+	 
+		@FindBy(xpath = "//ul[@class = ' card-header-tabs  ml-0 mr-0 nav nav-tabs']//li")
+		List <WebElement> tabs;
+
+	AnalyticDashBoardData objAnay;
+	
 	public DashBoardPage(WebDriver driver) {
 		setWebDriver(driver);
+		objAnay = new AnalyticDashBoardData(driver) ;
 		
 	}
 	
-	public void getStatusDashboardValue() {
-		waitForElementToAppear(statusXAxis.get(2));
+	
+	
+	
+	public void switchTOTab(String tab) {
 		
-		int count = statusXAxisBar.size();
-		System.out.println(count);
-		
-		for(int i = 0;i<count;i++) {
-			System.out.println();
-			int j = i +1;
+		for(int i= 0; i<=tabs.size();i++) {
+			if(tabs.get(i).getText().contains(tab) || tabs.get(i).getText().equalsIgnoreCase(tab)) {
+				jsExecutorClickOn(tabs.get(i));
+			}
+		}
 			
-			WebElement statusXAxisValue = pbDriver.findElement(By.xpath("//*[local-name() = 'svg']/*[name()='g' and @class = 'highcharts-data-labels highcharts-series-0 highcharts-column-series highcharts-tracker']/*[name() = 'g']["+j+"]/*[name()='text']/*[name()='tspan']"));
-			System.out.println("Status Name "+statusXAxis.get(i).getText()+" Value is "+ statusXAxisValue.getText());
+			
+		}
+	
+	public boolean checkLoanCount(int loanFromPortfolio) {
+		
+		if(loanFromPortfolio == Integer.valueOf(objAnay.getLoanCount())) {
+			return true;
+		}else {
+			return false;
 		}
 		
+	}
+	
+	public void getRecoveryStatus() {
+		
+		objAnay.getStatusDashboardValue();
 		
 	}
+	
+
 
 }

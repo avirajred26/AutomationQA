@@ -9,8 +9,17 @@ import java.net.InetAddress;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.TimeZone;
 import java.util.jar.Attributes.Name;
+
+import org.apache.commons.collections4.multimap.*;
 import org.apache.commons.compress.archivers.dump.InvalidFormatException;
 import org.apache.poi.ss.usermodel.CreationHelper;
 import org.apache.poi.ss.usermodel.IndexedColors;
@@ -21,6 +30,10 @@ import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFCellStyle;
 import org.apache.poi.xssf.usermodel.XSSFFont;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.testng.collections.MultiMap;
+
+import com.google.common.collect.MultimapBuilder;
+
 
 public class ExcelLibraries {
 	
@@ -42,6 +55,10 @@ public class ExcelLibraries {
 	static CreationHelper createHelper;
 	static XSSFCell cell;
 	public static String testCaseName,testData ,strTestCaseName,strColName,methodname;
+	public static Map<String, List<String> > permisson_set = new LinkedHashMap<>();
+	
+	
+	
 	
 	public static  String createExcel(String Reportname) throws InvalidFormatException, IOException, Throwable{
 	testCaseName = Reportname;
@@ -630,5 +647,62 @@ public static String getDataUploadColValue(String ColumnName) throws Throwable {
 		return valueArray;
 		
 	}
+	
+	
+	
+	public  static void getPermssionName() {
+		
+		workBook = new XSSFWorkbook();
+		try{
+			FileInputStream fin=new FileInputStream(System.getProperty("user.dir")+ "/src/main/java/"
+					+ "config/permission_set.xlsx");
+			workBook=(XSSFWorkbook) WorkbookFactory.create(fin);
+		}
+		catch(Exception e){
+			System.out.println(e);
+		}
+			
+
+		currentSheet = workBook.getSheet("Sheet1");
+
+		cellCount = currentSheet.getLastRowNum();
+		String  readValue = null,writeValue = null ;
+		int j = 1;
+		
+		for(int i =0;i<cellCount;i++) {
+			
+			if(currentSheet.getRow(j).getCell(1)!=null && currentSheet.getRow(j).getCell(2)!=null ) {
+				System.out.println(currentSheet.getRow(j).getCell(0).toString());
+				
+				readValue=currentSheet.getRow(j).getCell(1).toString(); 
+				writeValue=currentSheet.getRow(j).getCell(2).toString();
+
+				List<String> values = permisson_set.get(currentSheet.getRow(j).getCell(0).toString());
+				if(values == null) {
+				    values = new LinkedList<>();
+				    values.add(readValue);
+				    values.add(writeValue);
+				 }
+		
+				permisson_set.put(currentSheet.getRow(j).getCell(0).toString(), values );
+				
+				System.out.println("Getting Values" +permisson_set.get(currentSheet.getRow(j).getCell(0).toString() ).get(1));
+			}
+			j++;	
+	      }
+		
+		for (Entry<String, List<String> > entry : permisson_set.entrySet()) {
+            String key = entry.getKey();
+            List<String> values = entry.getValue();
+            System.out.println("Key = " + key+" --"+values);
+       
+            
+        }
+		System.out.println("done");
+		
+	}
+	
+	
+	
 	
 }

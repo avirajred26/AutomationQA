@@ -55,6 +55,13 @@ public class PageBase {
 		wait.until(ExpectedConditions.elementToBeClickable(element));
 	}
 	
+	
+	
+	
+	public Boolean checkForElementToClickable(WebElement element) throws Throwable{
+		return wait.until(ExpectedConditions.elementToBeClickable(element))!=null;
+	}
+	
 		public void moveToElement(WebElement element) {
 			Actions actions = new Actions(pbDriver); 
 			   actions.moveToElement(element); 
