@@ -1,5 +1,6 @@
 package base;
 
+import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -17,13 +18,14 @@ public class PageBase {
 	protected static WebDriver pbDriver;
 	private WebDriverWait wait;
 	private static final int iTimeOut = 20; //seconds
-	private  static final int iPolling = 100; //milliseconds
+	private  static final int iPolling = 1; //milliseconds
 	
 	    
-	@SuppressWarnings("deprecation")
+
 	public void setWebDriver(WebDriver driver) {
 		PageBase.pbDriver = driver;
-		wait = new WebDriverWait(pbDriver, iTimeOut, iPolling);
+		wait =  new WebDriverWait(driver, Duration.ofSeconds(iTimeOut,iPolling));
+		
 	    PageFactory.initElements(new AjaxElementLocatorFactory(PageBase.pbDriver, iTimeOut), this);
 	}
 	
@@ -36,7 +38,6 @@ public class PageBase {
 	protected Boolean waitForElementToAppearBoolean(WebElement element) {
        return  wait.until(ExpectedConditions.visibilityOf(element))!=null;
     }
-	
 	
 	
 	protected Boolean waitForElementsToAppearBoolean(List <WebElement> element) {
@@ -91,10 +92,8 @@ public class PageBase {
 		
 		
 		public static void clickOnElement(WebElement el) {
-			Point point = el.getLocation();
-			int xcord = point.getX();
 			
-			int ycord = point.getY();
+			
 			int width = el.getSize().getWidth();
 	
 			                Actions action = new Actions(pbDriver);

@@ -2,6 +2,7 @@ package pages;
 
 
 
+import java.text.ParseException;
 import java.util.List;
 import java.util.Set;
 import org.openqa.selenium.By;
@@ -59,10 +60,37 @@ public class LoginPage extends PageBase {
 	@FindBy(css = "span[class='ellipsis']")
 	WebElement time;
 	
-
 	
-	String pWindow,otp,user,timeNow;
+	@FindBy(xpath = "//p[contains(text(),'Username:')]//span[2]")
+	WebElement newPass;
+	
+	
+	@FindBy(xpath = "//div[@class='mb-4 card-title']//h2[@class='right-login-heading']")
+	WebElement passChange;
+	
+	
+	@FindBy(xpath = "//div[@class='mb-4 card-title']//h2[@class='right-login-heading']")
+	WebElement pass1;
+	
+	@FindBy(xpath = "//div[@class='mb-4 card-title']//h2[@class='right-login-heading']")
+	WebElement pass2;
+	
+	
+	@FindBy(xpath = "//div[@class='d-flex justify-content-between align-items-center']//button")
+	WebElement changeButton;
+	
+	//tbody tr p span:nth-child(1)
+	
+	
+	//.ellipsis.nw.b.f18
+	
+	@FindBy(css = "//.ellipsis.nw.b.f18")
+	WebElement inviteMail;
+	
+	
+	String pWindow,otp,user,timeNow,npassword,window1,window2;
 	List<WebElement> dynamicTime;
+	int count = 0;
 	
 	
 	
@@ -160,18 +188,29 @@ public class LoginPage extends PageBase {
 		
 	}
 	
+	
+	
+	
+	public void resertPassword() {
+		
+		pass1.sendKeys("Test@123");
+		pass2.sendKeys("Test@123");
+		
+		changeButton.click();
+	}
+	
 		public void setOTP() throws Throwable {
 		waitDriver();
 		
-		otp =	getOTP(user);
 		
-		pbDriver.switchTo().window(pWindow);
-		
-		otpTextBox.sendKeys(otp);
-		
-		
-		jsExecutorClickOn(otpSignin);
+			otp =	getOTP(user);
+			pbDriver.switchTo().window(pWindow);
 			
+			otpTextBox.sendKeys(otp);
+			
+			
+			jsExecutorClickOn(otpSignin);
+		
 		
 	}
 	
@@ -195,7 +234,83 @@ public class LoginPage extends PageBase {
 	}
 	
 	
+	public String getNewPassword(String uu) throws Throwable {
+		pWindow =  pbDriver.getWindowHandle();
+		System.out.println(pWindow);
+		
+		pbDriver.switchTo().newWindow(WindowType.WINDOW);
+		
+		pbDriver.navigate().to("https://yopmail.com");
 	
+			
+
+		window1 = pbDriver.getWindowHandle();
+		pbDriver.switchTo().window(window1);
+		System.out.println(window1);
+		
+		openTab();
+		
+		Set<String> setWindows2 = pbDriver.getWindowHandles();
+		
+		
+		
+		for(String x:setWindows2) {
+			System.out.println(x);
+		}
+		
+		String[] myArray = new String[setWindows2.size()];
+		
+		
+		
+		
+		setWindows2.toArray(myArray);
+		
+		window1 = myArray[2];
+		
+		window2 = myArray[3];
+		
+		
+		pbDriver.switchTo().window(window1);
+		
+		
+		uu = uu.replace("@yopmail.com", "");
+		otpUSer.clear();
+		otpUSer.sendKeys(user,Keys.ENTER);
+		waitDriver();
+		pbDriver.switchTo().frame("ifinbox");
+		for (int i = 0; i<=mailList.size();i++) {
+			
+		
+			pbDriver.switchTo().defaultContent();
+			pbDriver.switchTo().frame("ifmail");
+			
+			jsExecutorClickOn(mailList.get(i));
+			
+			if(inviteMail.getText()=="You have been invited to join Credgenics") {
+				if(waitForElementToAppearBoolean(newPass)) {
+					npassword = newPass.getText();
+					break;
+					  
+				}
+				
+				
+			}
+			
+			
+			
+			
+		}
+	    
+        pbDriver.switchTo().defaultContent();
+        
+        
+        pbDriver.switchTo().window(window2);
+        
+        
+		return npassword;
+		
+		
+	}
 	
 	
 	

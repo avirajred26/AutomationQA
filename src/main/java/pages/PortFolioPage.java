@@ -70,8 +70,59 @@ public class PortFolioPage extends PageBase {
 	@FindBy(xpath = "//div[@class='year-month-wrapper']//div[1]//div[3]")
 	public WebElement yearNext;
 	
+	@FindBy(xpath = "//div[contains(text(),'Tags')]")
+	public WebElement tagBtn;
 	
 	
+	@FindBy(xpath = "//span[normalize-space()='Add Tags']")
+	public WebElement addTag;
+	
+	@FindBy(xpath = "//span[normalize-space()='Remove Tags']")
+	public WebElement removeTag;
+	
+	
+	
+	@FindBy(xpath = "//input[@placeholder='Write Tag & Press Enter']")
+	public WebElement enterTag;
+	
+	
+	@FindBy(xpath = "//select[@name='available_tags_del']")
+	public WebElement selectTag;
+	
+	
+	
+	@FindBy(className  = "simple-icon-pencil f-size-12 ml10")
+	public WebElement pencilIcon;
+	
+	
+	@FindBy(xpath = "//span[normalize-space()='Provide Range']")
+	public WebElement provideRange;
+	
+	
+	@FindBy(xpath = "//input[@type='number']")
+	public WebElement enterLoanNo;
+	
+	
+	@FindBy(xpath = "//span[normalize-space()='OK']")
+	public WebElement okBtn;
+	
+	@FindBy(xpath = "	//input[@placeholder='From']")
+	public WebElement fromRange;
+	
+	
+	@FindBy(xpath = "//input[@placeholder='To']")
+	public WebElement toRange;
+	
+	
+	@FindBy(xpath = "//button[normalize-space()='Select Loan(s)']")
+	public WebElement selectLoanBtnm;
+	
+	
+	
+	
+
+	
+	//select[@name='available_tags_del']
 	
 	
 
@@ -179,12 +230,72 @@ public class PortFolioPage extends PageBase {
 	
 		WebElement el = pbDriver.findElement(By.linkText(Menu));
 		
-	jsExecutorClickOn(el);
+		if(waitForElementToAppearBoolean(el)) {
+			jsExecutorClickOn(el);
+		}
+		
+
 	
 		}
 	
-
+	public void addTagActivity(String tagName) {
+		
+		jsExecutorClickOn(tagBtn);
+		
+		
+		jsExecutorClickOn(addTag);
+		
+		
+		enterTag.sendKeys(tagName,Keys.ENTER);
+		
+		jsExecutorClickOn(addTag);
+		
+		
+	}
 	
+	
+	
+	public void removeTagActivity(String tagName) {
+		
+		jsExecutorClickOn(tagBtn);
+		
+		jsExecutorClickOn(removeTag);
+		
+		TestUtil.selectItemByVisibleText(selectTag, tagName);
+		
+		
+		jsExecutorClickOn(removeTag);
+		
+	}
+
+	public void selectLoanbyNumber(String firstNo,String secondNo,String method) {
+		
+		jsExecutorClickOn(selectAll);
+		
+		jsExecutorClickOn(pencilIcon);
+		
+		
+		if(method=="First") {
+			
+			enterLoanNo.sendKeys(secondNo);
+			jsExecutorClickOn(okBtn);
+			
+			
+		}else {
+			
+			
+			jsExecutorClickOn(provideRange);
+			
+			fromRange.sendKeys(firstNo);
+			toRange.sendKeys(secondNo);
+			
+			jsExecutorClickOn(selectLoanBtnm);
+		}
+		
+		
+		
+		
+	}
 	
 	
 }

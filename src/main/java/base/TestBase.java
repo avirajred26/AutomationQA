@@ -28,6 +28,10 @@ import org.jsoup.Connection;
 import org.apache.commons.collections4.bag.SynchronizedSortedBag;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpPost;
+import org.apache.poi.openxml4j.exceptions.InvalidOperationException;
+import org.apache.poi.openxml4j.opc.PackagePart;
+import org.apache.poi.openxml4j.opc.PackagePartName;
+import org.apache.poi.openxml4j.opc.PackagingURIHelper;
 import org.apache.xmlbeans.impl.common.ReaderInputStream;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -118,12 +122,8 @@ public class TestBase {
 	
 	@BeforeSuite
 	public void extentFileCreation() throws Throwable {
-		//System.out.println();
-		
-		
-		ExcelLibraries.getPermssionName();
 	
-		System.out.println(TestUtil.getTime(30));	
+		//System.out.println(TestUtil.getTime(30));	
 	
 		ExtentReport.createReportFile(prop.getProperty("reportTitle"));
 		TestUtil.renameFile();
@@ -212,6 +212,7 @@ public class TestBase {
     	else if (Brow.contains("Firefox") || Brow.equalsIgnoreCase("Firefox")) 
     		{
     		WebDriverManager.firefoxdriver().setup();
+    		
     		driver = new FirefoxDriver(); 
     	}
     	
@@ -233,7 +234,7 @@ public void reporting(String desc,String exp,String actual,String status) throws
 	
     
     
-   /* @BeforeMethod 
+  
     public void getResponse() {
     	
     	tool = 	((HasDevTools) driver).getDevTools();
@@ -246,17 +247,18 @@ public void reporting(String desc,String exp,String actual,String status) throws
    	 tool.addListener(Network.responseReceived(), requestSent -> {
    		
    
-   		
-   	      
+   	
+   	     
    		 
-   		 if(requestSent.getResponse().getUrl().contains("https://api.staging.credgenics.com") && requestSent.getType().toJson().contains("Fetch")  ) {
+   		 if(requestSent.getResponse().getUrl().contains(prop.getProperty("APiURL")) && requestSent.getType().toJson().contains("Fetch")  ) {
    			 //&& (type.contains("Portfolio") || type.equalsIgnoreCase("Portfolio"))
    		
+   			if(requestSent.getResponse().getStatus() !=200 || requestSent.getResponse().getStatus() !=201 )   {
+   				
    			
    			 Response re = requestSent.getResponse();
    			
    			RequestId[] requestIds = new RequestId[1];
-
    			
    			 
               System.out.println("Request URL => " + re.getUrl());
@@ -282,7 +284,7 @@ public void reporting(String desc,String exp,String actual,String status) throws
 
                 responseBody = tool.send(Network.getResponseBody(requestIds[0])).getBody();
              
-              
+   			}  
    		 } 
    		 
    	 });
@@ -315,13 +317,23 @@ public void reporting(String desc,String exp,String actual,String status) throws
     	
     }
  
-    @AfterMethod
-    public void getResponseAfter() {
-    	
-    	getResponse();
-    }
+  
     
     
-    */
+    /*public PackagePart put(final PackagePartName partName, final PackagePart part) {
+    	  final String ppName = partName.getName();
+    	  final StringBuilder concatSeg = new StringBuilder();
+    	  // split at slash, but keep leading slash
+    	  final String delim = "(?=["+PackagingURIHelper.FORWARD_SLASH_STRING+".])";
+    	  for (String seg : ppName.split(delim)) {
+    	    concatSeg.append(seg);
+    	    if (registerPartNameStr.contains(concatSeg.toString())) {
+    	      throw new InvalidOperationException(
+    	        "You can't add a part with a part name derived from another part ! [M1.11]");
+    	    }
+    	  }
+    	  registerPartNameStr.add(ppName);
+    	  return packagePartLookup.put(ppName, part);
+    	}*/
     
 }  

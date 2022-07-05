@@ -1,9 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
-  <test  name="Test">
+  <test  name="Test" >
+  
+  
    <parameter name="browser" value ="Chrome"></parameter>
+   <parameter name="tab" value ="tab"></parameter>
     <classes>
+    
+   
+      <class name="Heirachy.HC_Company_Creation_01"/>
+    </classes>
+  </test> 
+  
+  
+  
+  <test  name="Test1" >
+  
+  
+   <parameter name="browser" value ="Chrome"></parameter>
+   <parameter name="windowActivity" value ="tab"></parameter>
+    <classes>
+    
+   
+      <class name="Heirachy.HC_Company_Creation_01"/>
+    </classes>
+  </test> 
+  
+  
+  
+  
+  <test  name="Test2" >
+  
+  
+   <parameter name="browser" value ="Chrome"></parameter>
+   <parameter name="tab" value ="tab"></parameter>
+    <classes>
+    
+   
       <class name="Heirachy.HC_Company_Creation_01"/>
     </classes>
   </test> <!-- Test -->

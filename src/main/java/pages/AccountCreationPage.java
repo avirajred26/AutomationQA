@@ -1,4 +1,6 @@
 package pages;
+import java.lang.reflect.Array;
+import java.util.Collection;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -15,60 +17,66 @@ import utils.TestUtil;
 public class AccountCreationPage extends PageBase {
 	String usernames[];
 	
-	//table[1]/tbody[1]/tr[1]/td[1]/input[@name='new_email']
-	@FindBy(xpath = "//input[@id='email']")
-	WebElement email;
+
 	
-	@FindBy(xpath = "//input[@id='first-name']")
-	WebElement name;
+
+	@FindBy(xpath = "//table[@id = 'user-upload-logs']//tbody//tr")
+	List <WebElement> bulkTable;
 	
-	@FindBy(xpath = "//input[@id='last-name']")
+	@FindBy(xpath = "//button[normalize-space()='Bulk user upload']")
+	WebElement bulkUserBtn;
+	
+	@FindBy(css = "input[name='file1']")
+	WebElement fileSend;
+	
+	@FindBy(xpath = "//button[normalize-space()='Process File']")
+	WebElement process;
+	
+	@FindBy(xpath = "//button[normalize-space()='Add User']")
+	WebElement addUser;
+	
+	@FindBy(xpath = "//input[@id='first_name']")
+	WebElement firstName;
+	
+	@FindBy(xpath = "//input[@id='last_name']")
 	WebElement lastname;
 	
-	@FindBy(xpath = "(//div[@class='select__menu-list css-11unzgr'])[1]")
-	List <WebElement> parent_Company;
+	@FindBy(xpath = "//input[@id='email']")
+	WebElement userEmail;
 	
-	@FindBy(xpath = "//table[1]/tbody[1]/tr[7]/td[1]/select")
-	WebElement profess;
-	
-	@FindBy(xpath = "(//div[@class='select__menu-list css-11unzgr'])[1]")
-	List <WebElement> role;
-	
-	
-	
-	@FindBy(xpath = "//button[normalize-space()='Create & Invite User']")
-	WebElement createBtn;
-	
-	
-	@FindBy(xpath = "//div[@class='select__menu-list select__menu-list--is-multi css-11unzgr'])[1]")
-	List <WebElement> select_Companies;
-	
-	
-	@FindBy(xpath = "//input[@id='file']")
-	WebElement chooseFile;
-	
-	@FindBy(xpath = "//body/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/input[1]")
-	WebElement uploadFile;
-	
-	@FindBy(xpath = "//span[contains(text(),'×')]")
-	WebElement close;
-	
-	@FindBy(xpath = "//a[contains(text(),'Create User /Agent')]")
-	WebElement clickOnTab;
-	
-	
-	@FindBy(xpath = "//table[@class='table table-striped table-hover']/tbody/tr")
-	List <WebElement> DetailTable;
+	@FindBy(xpath = "//input[@placeholder='Select Role']")
+	WebElement role;
 	
 
+	
+	@FindBy(xpath = "//div[@class='basic-single false select--is-disabled css-14jk2my-container'][1]")
+	WebElement reportTo;
+	
+	@FindBy(css = "div[id='profile'] div[class='select__value-container css-1hwfws3']")
+	WebElement permission;
+	
+	@FindBy(xpath = "div[id='profession'] div[class='select__value-container css-1hwfws3']")
+	WebElement profession;
+	
+	
+	@FindBy(xpath = "//button[normalize-space()='Add & Invite User']")
+	WebElement createUser;
+	
+	@FindBy(xpath = "//div[@class='rst__rowWrapper']//div//div//child::div")
+	List <WebElement> rolelist;
+	
+	
+	
+	
+	
+	//div[@class='hierarchy-tree-container']//div//div//div//div
+	
+	WebElement userName,status,roleEl;
+	String strSatatus="",roleName="";
+	
 
 	
-	
-	
-	//a[contains(text(),'Create User /Agent')]
-	//table[@class='table table-striped table-hover']/tbody/tr
-	
-	
+	//div[@class='rst__node']//div[@class='rst__nodeContent']//div//div[@class='rst__rowWrapper']
 	
 	
 	public AccountCreationPage(WebDriver driver) {
@@ -79,51 +87,100 @@ public class AccountCreationPage extends PageBase {
 	
 	
 	
-	public void singleCreateAccount() {
+	public void singleCreateAccount() throws Throwable {
+	roleName  = "polo1";
 		
-		Actions actions = new Actions(pbDriver); 
-		
-	jsExecutorClickOn(pbDriver.findElement(By.xpath("//span[normalize-space()='User Management']")));
-		email.sendKeys("testuserqa12@yopmail.com");
-		name.sendKeys("Tester");
-		lastname.sendKeys("QA");
+		jsExecutorClickOn(addUser);
 		
 		
 		
+		
+		firstName.sendKeys("test");
+		lastname.sendKeys("user");
+		userEmail.sendKeys("2612Testuser@yopmail.com");
+		
+		
+		jsExecutorClickOn(role);
+		
+		roleEl = pbDriver.findElement(By.xpath("//div[contains(text(),'"+roleName+"')]"));
+		jsExecutorClickOn(roleEl);
+		
+		TestUtil.mouseHover(reportTo);
+		
+		reportTo.click();
+		reportTo.sendKeys("Cheif1 Cheif1");
+		
+		
+		
+		TestUtil.mouseHover(permission);
+		permission.click();
+		permission.sendKeys("jogi");
+		
+		TestUtil.mouseHover(profession);
+		
+		profession.click();
+		profession.sendKeys("telecalling");
+		
+		TestUtil.mouseHover(createUser);
+		
+		
+		jsExecutorClickOn(createUser);
+		
+		
+		
+		
+		
+		
+	}
 	
-		actions.moveToElement(pbDriver.findElement(By.xpath("(//div[@class='select__value-container select__value-container--has-value css-1hwfws3'])[1]"))); 
-	    actions.clickAndHold().perform();
-	    
-	    TestUtil.selectBYList(role, "User");
+	
+
+	
+	
+	
+	
+	
+	
+	public Boolean createAcountBulk( ) {
 		
-	    actions.moveToElement(pbDriver.findElement(By.xpath("(//div[@class='select__value-container css-1hwfws3'])[1]"))); 
-	    actions.clickAndHold().perform();
+		
 		
 
-	    TestUtil.selectBYList(parent_Company, "Credgenics");
-		//TestUtil.selectItem(parent_Company, 16);
-	    
-	    actions.moveToElement(pbDriver.findElement(By.xpath("(//div[@class='select__value-container select__value-container--is-multi css-1hwfws3'])[1]"))); 
-	    actions.clickAndHold().perform();
-	    TestUtil.selectBYList(select_Companies, "Credgenics");
+		jsExecutorClickOn(bulkUserBtn);
 		
-		//TestUtil.selectItem(select_Companies, 10);
+		fileSend.sendKeys(System.getProperty("user.dir")+ "/src/main/java/"
+				+ "config/BulkUser.xlsx");
 		
-		createBtn.click();
+		
+		jsExecutorClickOn(process);
+		
+		int userSize = bulkTable.size();
+		
+		for(int i = 0;i<=userSize-1;i++) {
+			int index = i+1;
+			
+			userName = pbDriver.findElement(By.xpath("//table[@id = 'user-upload-logs']//tbody//tr["+index+"]//td[1]"));
+			status = pbDriver.findElement(By.xpath("//table[@id = 'user-upload-logs']//tbody//tr["+index+"]//td[2]"));
+			
+			System.out.println(status.getText());
+			
+			if(ExcelLibraries.getUserNames(userName.getText()) && status.getText()=="Success") {
+			
+				
+			}else {
+				
+				strSatatus = status.getText();
+				return false;
+			}
+			
+		}
+		return false;
 		
 		
 	}
 	
 	
-
 	
 	
 	
-	
-	
-	
-	public void createAcount(String Method ,String Type, String Email, String Password, String Name,String Campign, String Profession ) {
-		
-		
-	}
 }

@@ -81,7 +81,7 @@ public class TC005_UploadLoan extends TestBase {
 		*/
 		
 		
-		TestUtil.getReponseBody();
+	
 		
 	}
 

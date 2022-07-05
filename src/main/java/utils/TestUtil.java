@@ -25,6 +25,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.Random;
 import java.util.Scanner;
 import org.apache.commons.io.FileUtils;
 import org.json.JSONArray;
@@ -285,83 +286,17 @@ public class TestUtil {
 		
 	}
 	
-	
-	public static void getReponseBody() throws IOException {
+	public static int randomNumnber() {
 		
-		System.out.println(TestBase.numberMapping.size());
+		 int max = 9999999;
+		  int min = 1;
 		
-		for(int j=0;j<TestBase.numberMapping.size();j++){
-            System.out.println(TestBase.numberMapping.get(j));
-        }
-		
-		
-		
-		BufferedReader br;
-		System.out.println(TestBase.responseBody);
-		
-		InputStream targetStream = new ByteArrayInputStream(TestBase.responseBody.getBytes());
-		
-		br = new BufferedReader(new InputStreamReader(targetStream));
-		
-		 JSONTokener tokener = new JSONTokener(br);
-		 
-		    JSONObject json = new JSONObject(tokener);
-		    
-		    Iterator<String> keysparent = json.keys();
-		    
-		    while(keysparent.hasNext()) {
-		        String key1 = keysparent.next();
-		        System.out.println(json.get(key1));
-		        
-		        if (json.get(key1) instanceof JSONObject ) {
-		        	
-		        	
-		   		        JSONObject json1 = json.getJSONObject(keysparent.next());
-		   		        
-		   		        Iterator<String> keys2 = json1.keys();
-		   		        String keychild1 = keys2.next();
-		   		        
-		   		        System.out.println(json1.get(keychild1));
-		   		        if (json1.get(keychild1) instanceof JSONObject) {
-		   		        	
-		   		        	System.out.println(json1.keys());
-		   		        	System.out.println(json1.get(keychild1));
-		   		                  
-		   		        }
-		   		    
-		        	
-		        	
-		        	
-		        	System.out.println(json.get(key1));
-		                 
-		        }
-		    }
-		    
-		 
-		
-		jsonBody = new HashMap<String, String>();
-		String line ;
-		if(br.ready()) {
-			while ((line = br.readLine()) != null) {
-				System.out.println(line);
-				  
-	            // split the line by :
-	            String[] parts = line.split(":");
-
-	            // first part is name, second is number
-	            String name = parts[0].trim();
-	            String number = parts[1].trim();
-
-	            // put name, number in HashMap if they are
-	            // not empty
-	            if (!name.equals("") && !number.equals(""))
-	                jsonBody.put(name, number);
-	        }
-		}
-		
-		
-		jsonBody.forEach((key2, value) -> System.out.println(key2 + ":" + value));
+		  Random randomNum = new Random();
+		  int showMe = min + randomNum.nextInt(max);
+		return showMe;
 	}
-
+	
+	
+	
 }
 	

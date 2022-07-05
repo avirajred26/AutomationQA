@@ -53,7 +53,7 @@ public class TC004_CreateAccount extends TestBase {
 	
 		
 		objAcc = new AccountCreationPage(driver);
-		objAcc.createAcount("Multi", "", "", "", "", "", "");
+		//objAcc.createAcount("Multi", "", "", "", "", "", "");
 	
 		
 		

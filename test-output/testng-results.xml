@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results total="2" passed="0" failed="2" skipped="0">
+<testng-results total="5" passed="1" failed="1" skipped="3">
   <reporter-output>
     <line>
       <![CDATA[Trying to find Element By : By.xpath: //button[@id='login-btn-lp']]]>
@@ -92,33 +92,15 @@
       <![CDATA[Found Element By : By.xpath: //span[@class='capitalize mv-short']]]>
     </line>
     <line>
-      <![CDATA[Trying to find Element By : By.xpath: //span[normalize-space()='Create Company']]]>
-    </line>
-    <line>
-      <![CDATA[Exception occured: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[normalize-space()='Create Company']"}
-  (Session info: chrome=100.0.4896.75)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
-Build info: version: '4.0.0-rc-1', revision: 'bc5511cbda'
-System info: host: 'Avirajs-MacBook-Air.local', ip: 'fe80:0:0:0:4af:86ff:abae:8236%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '11.2', java.version: '16.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [b9f4d916976009791376c8f05f05db3f, findElement {using=xpath, value=//span[normalize-space()='Create Company']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 100.0.4896.75, chrome: {chromedriverVersion: 100.0.4896.60 (6a5d10861ce8..., userDataDir: /var/folders/26/gxg2cjsd2dl...}, goog:chromeOptions: {debuggerAddress: localhost:58624}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), se:cdp: ws://localhost:58624/devtoo..., se:cdpVersion: 100.0.4896.75, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: b9f4d916976009791376c8f05f05db3f]]>
-    </line>
-    <line>
       <![CDATA[Exception occured: java.lang.NoSuchMethodError: 'java.util.Optional org.openqa.selenium.devtools.HasDevTools.maybeGetDevTools()']]>
     </line>
   </reporter-output>
-  <suite started-at="2022-04-07T09:49:35Z" name="Suite" finished-at="2022-04-07T09:50:32Z" duration-ms="56669">
+  <suite started-at="2022-06-27T07:08:45Z" name="Suite" finished-at="2022-06-27T07:09:59Z" duration-ms="74338">
     <groups>
     </groups>
-    <test started-at="2022-04-07T09:49:35Z" name="Test" finished-at="2022-04-07T09:50:32Z" duration-ms="56669">
+    <test started-at="2022-06-27T07:08:45Z" name="ChromeTest" finished-at="2022-06-27T07:08:45Z" duration-ms="436">
       <class name="Heirachy.HC_Company_Creation_01">
-        <test-method is-config="true" signature="extentFileCreation()[pri:0, instance:Heirachy.HC_Company_Creation_01@2cf3d63b]" started-at="2022-04-07T15:19:17Z" name="extentFileCreation" finished-at="2022-04-07T15:19:35Z" duration-ms="17501" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- extentFileCreation -->
-        <test-method is-config="true" signature="launchApplication(java.lang.String)[pri:0, instance:Heirachy.HC_Company_Creation_01@2cf3d63b]" started-at="2022-04-07T15:19:35Z" name="launchApplication" finished-at="2022-04-07T15:19:58Z" duration-ms="22946" status="PASS">
+        <test-method is-config="true" signature="launchApplication(java.lang.String)[pri:0, instance:Heirachy.HC_Company_Creation_01@25ce9dc4]" started-at="2022-06-27T12:38:45Z" name="launchApplication" finished-at="2022-06-27T12:38:45Z" duration-ms="0" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -126,59 +108,105 @@ Session ID: b9f4d916976009791376c8f05f05db3f]]>
               </value>
             </param>
           </params>
+          <exception class="org.apache.poi.POIXMLException">
+            <message>
+              <![CDATA[org.apache.poi.openxml4j.exceptions.InvalidOperationException: You can't add a part with a part name derived from another part ! [M1.11]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.apache.poi.POIXMLException: org.apache.poi.openxml4j.exceptions.InvalidOperationException: You can't add a part with a part name derived from another part ! [M1.11]
+	at org.apache.poi.POIXMLDocumentPart.createRelationship(POIXMLDocumentPart.java:533)
+	at org.apache.poi.xssf.usermodel.XSSFWorkbook.createSheet(XSSFWorkbook.java:876)
+	at utils.ExcelLibraries.createExcel(ExcelLibraries.java:78)
+	at base.TestBase.launchApplication(TestBase.java:134)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:514)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:215)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:142)
+	at org.testng.TestRunner.beforeRun(TestRunner.java:656)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:39)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:400)
+	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+Caused by: org.apache.poi.openxml4j.exceptions.InvalidOperationException: You can't add a part with a part name derived from another part ! [M1.11]
+	at org.apache.poi.openxml4j.opc.PackagePartCollection.put(PackagePartCollection.java:63)
+	at org.apache.poi.openxml4j.opc.OPCPackage.createPart(OPCPackage.java:896)
+	at org.apache.poi.openxml4j.opc.OPCPackage.createPart(OPCPackage.java:833)
+	at org.apache.poi.POIXMLDocumentPart.createRelationship(POIXMLDocumentPart.java:513)
+	... 21 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.apache.poi.POIXMLException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApplication -->
-        <test-method is-config="true" signature="getFunctionName(java.lang.reflect.Method)[pri:0, instance:Heirachy.HC_Company_Creation_01@2cf3d63b]" started-at="2022-04-07T15:19:58Z" name="getFunctionName" finished-at="2022-04-07T15:19:58Z" duration-ms="4" status="PASS">
+        <test-method is-config="true" signature="getFunctionName(java.lang.reflect.Method)[pri:0, instance:Heirachy.HC_Company_Creation_01@25ce9dc4]" started-at="2022-06-27T12:38:45Z" name="getFunctionName" finished-at="2022-06-27T12:38:45Z" duration-ms="0" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getFunctionName -->
+        <test-method signature="loginTest()[pri:1, instance:Heirachy.HC_Company_Creation_01@25ce9dc4]" started-at="2022-06-27T12:38:45Z" name="loginTest" finished-at="2022-06-27T12:38:45Z" duration-ms="5" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest -->
+        <test-method is-config="true" signature="getFunctionName(java.lang.reflect.Method)[pri:0, instance:Heirachy.HC_Company_Creation_01@25ce9dc4]" started-at="2022-06-27T12:38:45Z" name="getFunctionName" finished-at="2022-06-27T12:38:45Z" duration-ms="0" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getFunctionName -->
+        <test-method signature="createCompnay()[pri:2, instance:Heirachy.HC_Company_Creation_01@25ce9dc4]" started-at="2022-06-27T12:38:45Z" name="createCompnay" finished-at="2022-06-27T12:38:45Z" duration-ms="6" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createCompnay -->
+        <test-method is-config="true" signature="getFunctionName(java.lang.reflect.Method)[pri:0, instance:Heirachy.HC_Company_Creation_01@25ce9dc4]" started-at="2022-06-27T12:38:45Z" name="getFunctionName" finished-at="2022-06-27T12:38:45Z" duration-ms="0" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getFunctionName -->
+        <test-method signature="checkNewAccount()[pri:3, instance:Heirachy.HC_Company_Creation_01@25ce9dc4]" started-at="2022-06-27T12:38:45Z" name="checkNewAccount" finished-at="2022-06-27T12:38:45Z" duration-ms="0" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkNewAccount -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Heirachy.HC_Company_Creation_01@25ce9dc4]" started-at="2022-06-27T12:38:45Z" name="tearDown" finished-at="2022-06-27T12:38:45Z" duration-ms="0" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- Heirachy.HC_Company_Creation_01 -->
+    </test> <!-- ChromeTest -->
+    <test started-at="2022-06-27T07:08:45Z" name="FirefoxTest" finished-at="2022-06-27T07:09:59Z" duration-ms="74338">
+      <class name="Heirachy.HC_Create_User_2">
+        <test-method is-config="true" signature="extentFileCreation()[pri:0, instance:Heirachy.HC_Create_User_2@7bba5817]" started-at="2022-06-27T12:38:45Z" name="extentFileCreation" finished-at="2022-06-27T12:38:45Z" duration-ms="252" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- extentFileCreation -->
+        <test-method is-config="true" signature="launchApplication(java.lang.String)[pri:0, instance:Heirachy.HC_Create_User_2@7bba5817]" started-at="2022-06-27T12:38:45Z" name="launchApplication" finished-at="2022-06-27T12:39:39Z" duration-ms="54011" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void Heirachy.HC_Company_Creation_01.loginTest() throws java.lang.Throwable]]>
+                <![CDATA[Firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method is-config="true" signature="getFunctionName(java.lang.reflect.Method)[pri:0, instance:Heirachy.HC_Create_User_2@7bba5817]" started-at="2022-06-27T12:39:39Z" name="getFunctionName" finished-at="2022-06-27T12:39:39Z" duration-ms="29" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void Heirachy.HC_Create_User_2.loginTest() throws java.lang.Throwable]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getFunctionName -->
-        <test-method signature="loginTest()[pri:1, instance:Heirachy.HC_Company_Creation_01@2cf3d63b]" started-at="2022-04-07T15:19:58Z" name="loginTest" finished-at="2022-04-07T15:20:27Z" duration-ms="29284" status="FAIL">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[expected [true] but found [false]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
-	at org.testng.Assert.fail(Assert.java:94)
-	at org.testng.Assert.failNotEquals(Assert.java:513)
-	at org.testng.Assert.assertTrue(Assert.java:42)
-	at org.testng.Assert.assertTrue(Assert.java:52)
-	at Heirachy.HC_Company_Creation_01.loginTest(HC_Company_Creation_01.java:37)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:782)
-	at org.testng.TestRunner.run(TestRunner.java:632)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
-	at org.testng.TestNG.run(TestNG.java:1064)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+        <test-method signature="loginTest()[pri:1, instance:Heirachy.HC_Create_User_2@7bba5817]" started-at="2022-06-27T12:39:39Z" name="loginTest" finished-at="2022-06-27T12:39:59Z" duration-ms="19881" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Trying to find Element By : By.xpath: //button[@id='login-btn-lp']]]>
@@ -272,65 +300,49 @@ Session ID: b9f4d916976009791376c8f05f05db3f]]>
             </line>
           </reporter-output>
         </test-method> <!-- loginTest -->
-        <test-method is-config="true" signature="getFunctionName(java.lang.reflect.Method)[pri:0, instance:Heirachy.HC_Company_Creation_01@2cf3d63b]" started-at="2022-04-07T15:20:27Z" name="getFunctionName" finished-at="2022-04-07T15:20:27Z" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="getFunctionName(java.lang.reflect.Method)[pri:0, instance:Heirachy.HC_Create_User_2@7bba5817]" started-at="2022-06-27T12:39:59Z" name="getFunctionName" finished-at="2022-06-27T12:39:59Z" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void Heirachy.HC_Company_Creation_01.createCompnay() throws java.lang.Throwable]]>
+                <![CDATA[public void Heirachy.HC_Create_User_2.createCompnay() throws java.lang.Throwable]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getFunctionName -->
-        <test-method signature="createCompnay()[pri:2, instance:Heirachy.HC_Company_Creation_01@2cf3d63b]" started-at="2022-04-07T15:20:27Z" name="createCompnay" finished-at="2022-04-07T15:20:31Z" duration-ms="3772" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchElementException">
+        <test-method signature="createCompnay()[pri:2, instance:Heirachy.HC_Create_User_2@7bba5817]" started-at="2022-06-27T12:39:59Z" name="createCompnay" finished-at="2022-06-27T12:39:59Z" duration-ms="33" status="FAIL">
+          <exception class="org.openqa.selenium.InvalidSelectorException">
             <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//span[normalize-space()='Create Company']"}
-  (Session info: chrome=100.0.4896.75)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+              <![CDATA[Compound class names not permitted
+For documentation on this error, please visit: https://selenium.dev/exceptions/#invalid_selector_exception
 Build info: version: '4.0.0-rc-1', revision: 'bc5511cbda'
-System info: host: 'Avirajs-MacBook-Air.local', ip: 'fe80:0:0:0:4af:86ff:abae:8236%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '11.2', java.version: '16.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [b9f4d916976009791376c8f05f05db3f, findElement {using=xpath, value=//span[normalize-space()='Create Company']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 100.0.4896.75, chrome: {chromedriverVersion: 100.0.4896.60 (6a5d10861ce8..., userDataDir: /var/folders/26/gxg2cjsd2dl...}, goog:chromeOptions: {debuggerAddress: localhost:58624}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), se:cdp: ws://localhost:58624/devtoo..., se:cdpVersion: 100.0.4896.75, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: b9f4d916976009791376c8f05f05db3f]]>
+System info: host: 'Avirajs-MacBook-Air.local', ip: 'fe80:0:0:0:148c:7f37:cbdb:fbda%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '11.3', java.version: '16.0.2'
+Driver info: driver.version: unknown]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[normalize-space()='Create Company']"}
-  (Session info: chrome=100.0.4896.75)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+              <![CDATA[org.openqa.selenium.InvalidSelectorException: Compound class names not permitted
+For documentation on this error, please visit: https://selenium.dev/exceptions/#invalid_selector_exception
 Build info: version: '4.0.0-rc-1', revision: 'bc5511cbda'
-System info: host: 'Avirajs-MacBook-Air.local', ip: 'fe80:0:0:0:4af:86ff:abae:8236%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '11.2', java.version: '16.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [b9f4d916976009791376c8f05f05db3f, findElement {using=xpath, value=//span[normalize-space()='Create Company']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 100.0.4896.75, chrome: {chromedriverVersion: 100.0.4896.60 (6a5d10861ce8..., userDataDir: /var/folders/26/gxg2cjsd2dl...}, goog:chromeOptions: {debuggerAddress: localhost:58624}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), se:cdp: ws://localhost:58624/devtoo..., se:cdpVersion: 100.0.4896.75, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: b9f4d916976009791376c8f05f05db3f
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:78)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:164)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:139)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:559)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:383)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:375)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
-	at org.openqa.selenium.support.events.EventFiringWebDriver.lambda$new$1(EventFiringWebDriver.java:115)
-	at jdk.proxy2/jdk.proxy2.$Proxy17.findElement(Unknown Source)
-	at org.openqa.selenium.support.events.EventFiringWebDriver.findElement(EventFiringWebDriver.java:204)
-	at pages.CreateCompnayPage.applyCompanyDetails(CreateCompnayPage.java:82)
-	at Heirachy.HC_Company_Creation_01.createCompnay(HC_Company_Creation_01.java:53)
+System info: host: 'Avirajs-MacBook-Air.local', ip: 'fe80:0:0:0:148c:7f37:cbdb:fbda%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '11.3', java.version: '16.0.2'
+Driver info: driver.version: unknown
+	at org.openqa.selenium.By$ByClassName.<init>(By.java:310)
+	at org.openqa.selenium.By.className(By.java:100)
+	at org.openqa.selenium.support.AbstractFindByBuilder.buildByFromShortFindBy(AbstractFindByBuilder.java:43)
+	at org.openqa.selenium.support.FindBy$FindByBuilder.buildIt(FindBy.java:85)
+	at org.openqa.selenium.support.pagefactory.Annotations.buildBy(Annotations.java:79)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.<init>(DefaultElementLocator.java:58)
+	at org.openqa.selenium.support.pagefactory.AjaxElementLocator.<init>(AjaxElementLocator.java:62)
+	at org.openqa.selenium.support.pagefactory.AjaxElementLocator.<init>(AjaxElementLocator.java:83)
+	at org.openqa.selenium.support.pagefactory.AjaxElementLocator.<init>(AjaxElementLocator.java:75)
+	at org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory.createLocator(AjaxElementLocatorFactory.java:35)
+	at org.openqa.selenium.support.pagefactory.DefaultFieldDecorator.decorate(DefaultFieldDecorator.java:57)
+	at org.openqa.selenium.support.PageFactory.proxyFields(PageFactory.java:110)
+	at org.openqa.selenium.support.PageFactory.initElements(PageFactory.java:102)
+	at org.openqa.selenium.support.PageFactory.initElements(PageFactory.java:89)
+	at base.PageBase.setWebDriver(PageBase.java:29)
+	at pages.PortFolioPage.<init>(PortFolioPage.java:130)
+	at Heirachy.HC_Create_User_2.createCompnay(HC_Create_User_2.java:57)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -344,38 +356,20 @@ Session ID: b9f4d916976009791376c8f05f05db3f
 	at org.testng.TestRunner.privateRun(TestRunner.java:782)
 	at org.testng.TestRunner.run(TestRunner.java:632)
 	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
-	at org.testng.TestNG.run(TestNG.java:1064)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:39)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:400)
+	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:831)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- org.openqa.selenium.InvalidSelectorException -->
           <reporter-output>
-            <line>
-              <![CDATA[Trying to find Element By : By.xpath: //span[normalize-space()='Create Company']]]>
-            </line>
-            <line>
-              <![CDATA[Exception occured: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[normalize-space()='Create Company']"}
-  (Session info: chrome=100.0.4896.75)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
-Build info: version: '4.0.0-rc-1', revision: 'bc5511cbda'
-System info: host: 'Avirajs-MacBook-Air.local', ip: 'fe80:0:0:0:4af:86ff:abae:8236%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '11.2', java.version: '16.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [b9f4d916976009791376c8f05f05db3f, findElement {using=xpath, value=//span[normalize-space()='Create Company']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 100.0.4896.75, chrome: {chromedriverVersion: 100.0.4896.60 (6a5d10861ce8..., userDataDir: /var/folders/26/gxg2cjsd2dl...}, goog:chromeOptions: {debuggerAddress: localhost:58624}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), se:cdp: ws://localhost:58624/devtoo..., se:cdpVersion: 100.0.4896.75, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: b9f4d916976009791376c8f05f05db3f]]>
-            </line>
           </reporter-output>
         </test-method> <!-- createCompnay -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Heirachy.HC_Company_Creation_01@2cf3d63b]" started-at="2022-04-07T15:20:31Z" name="tearDown" finished-at="2022-04-07T15:20:31Z" duration-ms="0" status="FAIL">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Heirachy.HC_Create_User_2@7bba5817]" started-at="2022-06-27T12:39:59Z" name="tearDown" finished-at="2022-06-27T12:39:59Z" duration-ms="0" status="FAIL">
           <exception class="java.lang.NoSuchMethodError">
             <message>
               <![CDATA['java.util.Optional org.openqa.selenium.devtools.HasDevTools.maybeGetDevTools()']]>
@@ -388,9 +382,9 @@ Session ID: b9f4d916976009791376c8f05f05db3f]]>
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
 	at org.openqa.selenium.support.events.EventFiringWebDriver.lambda$new$1(EventFiringWebDriver.java:115)
-	at jdk.proxy2/jdk.proxy2.$Proxy17.close(Unknown Source)
+	at jdk.proxy2/jdk.proxy2.$Proxy18.close(Unknown Source)
 	at org.openqa.selenium.support.events.EventFiringWebDriver.close(EventFiringWebDriver.java:216)
-	at base.TestBase.tearDown(TestBase.java:198)
+	at base.TestBase.tearDown(TestBase.java:194)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -402,17 +396,13 @@ Session ID: b9f4d916976009791376c8f05f05db3f]]>
 	at org.testng.TestRunner.afterRun(TestRunner.java:1012)
 	at org.testng.TestRunner.run(TestRunner.java:636)
 	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
-	at org.testng.TestNG.run(TestNG.java:1064)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:39)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:400)
+	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:831)
 ]]>
             </full-stacktrace>
           </exception> <!-- java.lang.NoSuchMethodError -->
@@ -422,7 +412,7 @@ Session ID: b9f4d916976009791376c8f05f05db3f]]>
             </line>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- Heirachy.HC_Company_Creation_01 -->
-    </test> <!-- Test -->
+      </class> <!-- Heirachy.HC_Create_User_2 -->
+    </test> <!-- FirefoxTest -->
   </suite> <!-- Suite -->
 </testng-results>

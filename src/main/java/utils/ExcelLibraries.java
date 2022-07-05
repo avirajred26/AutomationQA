@@ -21,6 +21,8 @@ import java.util.jar.Attributes.Name;
 
 import org.apache.commons.collections4.multimap.*;
 import org.apache.commons.compress.archivers.dump.InvalidFormatException;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.CreationHelper;
 import org.apache.poi.ss.usermodel.IndexedColors;
 import org.apache.poi.ss.usermodel.Row;
@@ -622,12 +624,12 @@ public static String getDataUploadColValue(String ColumnName) throws Throwable {
 		iActiveRow=1;
 	}
 	
-	public static String[] getUserNames() {
+	public static Boolean getUserNames(String user) {
 	
 		workBook = new XSSFWorkbook();
 		try{
 			FileInputStream fin=new FileInputStream(System.getProperty("user.dir")+ "/src/main/java/"
-					+ "config/new_agent.xlsx");
+					+ "config/BulkUser.xlsx");
 			workBook=(XSSFWorkbook) WorkbookFactory.create(fin);
 		}
 		catch(Exception e){
@@ -637,14 +639,32 @@ public static String getDataUploadColValue(String ColumnName) throws Throwable {
 
 		currentSheet = workBook.getSheet("Sheet1");
 
-		cellCount = currentSheet.getLastRowNum();
-		String  valueArray [] = new String [cellCount];
-		
+		cellCount = currentSheet.getPhysicalNumberOfRows();
+	
+		System.out.println(cellCount);
+		int index=0;
 		for(int i =0;i<cellCount;i++) {
-			valueArray[i]=currentSheet.getRow(i+1).getCell(1).toString();  	   
+			
+		
+			index = i+1;
+			
+			try {
+				if(currentSheet.getRow(index).getCell(2).getStringCellValue().isEmpty()|| currentSheet.getRow(index).getCell(2).getStringCellValue().isBlank()) {
+					continue;
+				}
+			}catch (Exception e) {
+				continue;
+			}
+			
+			
+			System.out.println(currentSheet.getRow(index).getCell(2).toString());
+		
+		if(currentSheet.getRow(index).getCell(2).toString()==user) {
+			return true;
+		}
 	      }
 
-		return valueArray;
+		return false;
 		
 	}
 	

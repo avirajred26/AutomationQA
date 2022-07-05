@@ -4,7 +4,12 @@
   <artifactId>DEMO_CRED</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   
+  <build>
   
+  
+  
+  
+  </build>
   <dependencies>
   <dependency>
     <groupId>com.aventstack</groupId>
