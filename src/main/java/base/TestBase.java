@@ -55,6 +55,7 @@ import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.logging.LoggingPreferences;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
+import org.testng.Assert;
 import org.testng.IInvokedMethod;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
@@ -67,6 +68,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
@@ -77,6 +79,9 @@ import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import pages.LoginPage;
+import pages.PortFolioPage;
+
 import java.util.Optional;
 import utils.ExcelLibraries;
 import utils.ExtentReport;
@@ -103,7 +108,14 @@ public class TestBase {
     public static ChromeOptions option;
     public static  String  responseBody,type="";
     public  static  Map<Integer, String> numberMapping;
-
+    
+    
+    public LoginPage objLogin;
+    
+    public PortFolioPage objPort;
+    
+    
+    
   public static DevTools tool;
 	
 	public TestBase() {
@@ -315,6 +327,47 @@ public void reporting(String desc,String exp,String actual,String status) throws
     	
     }
  
+    
+    
+    @Test(priority = 1)
+    public  void RequireLogin() throws Throwable {
+    	
+    	
+    	
+    	objLogin = new LoginPage(driver);
+		
+		objLogin.loginActivity(ExcelLibraries.getTestColValue("UserName"), ExcelLibraries.getTestColValue("Password"));
+		
+		Assert.assertNotEquals(objLogin.verifyforWrongPassword(), true);
+		
+		reporting("Login-OTP Validation", "User should be able to get OTP", "User Successfully navigate to OTP Page", "Pass");
+		
+		objLogin.setOTP();
+		
+		Assert.assertTrue(objLogin.verifyUsernameDispalyed());
+		
+		reporting("Login Validation", "User should be able to login", "User Successfully Loggedin", "Pass");
+		
+		objPort=new PortFolioPage(driver);
+		objPort.clickOnCompany("Click", "");
+		Thread.sleep(5000);
+		try {
+			Assert.assertEquals(true, objPort.portfolioActivity());
+			reporting("Portfolio Validation", "Table should be loaded", "Table loaded successfully", "Pass");
+		}catch(Exception e) {
+			reporting("Portfolio Validation", "Table should be loaded", "Table loaded unsuccessfully", "Fail");
+		}
+		
+		try {
+			Assert.assertEquals(true, objPort.searchLoan(ExcelLibraries.getTestColValue("loan")));
+			reporting("Loan Search Validation", "Loan  should be show", "Loan shows successfully", "Pass");
+		}catch(Exception e) {
+			reporting("Loan Search Validation", "Loan should be show", "loan shows unsuccessfully", "Fail");
+		}
+    	
+    	
+    	
+    }
   
     
     
