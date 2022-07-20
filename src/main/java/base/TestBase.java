@@ -122,9 +122,6 @@ public class TestBase {
 	
 	@BeforeSuite
 	public void extentFileCreation() throws Throwable {
-	
-		//System.out.println(TestUtil.getTime(30));	
-	
 		ExtentReport.createReportFile(prop.getProperty("reportTitle"));
 		TestUtil.renameFile();
 	}
@@ -133,11 +130,11 @@ public class TestBase {
 	@BeforeTest
     public void launchApplication(String brow) throws Throwable {
 	     
-		
+	
 		
 		ExcelLibraries.createExcel(getClass().getSimpleName());
 		
-		ExtentReport.updateReportName(getClass().getSimpleName());
+		ExtentReport.createReportName(getClass().getSimpleName());
 		
 	
 		
@@ -176,7 +173,8 @@ public class TestBase {
 	}
 	
 	@BeforeMethod
-	public  void getFunctionName(Method  arg0) {
+	public static void getFunctionName(Method  arg0) {
+		System.out.println(arg0.toString());
 		ExtentReport.createParentNode(arg0.getName());
 		
 	}

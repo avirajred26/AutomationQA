@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="2" parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+<suite parallel="none" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <parameter name="browser" value="Firefox"/>
   <test name="ChromeTest">
     <parameter name="browser" value="Chrome"/>
@@ -14,15 +14,16 @@
       <class name="Heirachy.HC_Create_User_2"/>
     </classes>
   </test> <!-- FirefoxTest -->
-  <test parallel="tests" name="ChromeTest(failed)">
+  <test parallel="none" name="ChromeTest(failed)">
     <parameter name="browser" value="Chrome"/>
     <classes>
       <class name="Heirachy.HC_Company_Creation_01">
         <methods>
+          <include name="getFunctionName"/>
           <include name="checkNewAccount"/>
           <include name="createCompnay"/>
           <include name="launchApplication"/>
-          <include name="loginTest"/>
+          <include name="tearDown"/>
         </methods>
       </class> <!-- Heirachy.HC_Company_Creation_01 -->
       <class name="Heirachy.HC_Create_User_2">
@@ -35,12 +36,14 @@
       </class> <!-- Heirachy.HC_Create_User_2 -->
     </classes>
   </test> <!-- ChromeTest(failed) -->
-  <test parallel="tests" name="FirefoxTest(failed)">
+  <test parallel="none" name="FirefoxTest(failed)">
     <parameter name="browser" value="Firefox"/>
     <classes>
       <class name="Heirachy.HC_Company_Creation_01">
         <methods>
+          <include name="getFunctionName"/>
           <include name="launchApplication"/>
+          <include name="tearDown"/>
         </methods>
       </class> <!-- Heirachy.HC_Company_Creation_01 -->
       <class name="Heirachy.HC_Create_User_2">

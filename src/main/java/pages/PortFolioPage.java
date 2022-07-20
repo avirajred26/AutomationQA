@@ -140,6 +140,8 @@ public class PortFolioPage extends PageBase {
 			jsExecutorClickOn(searchEnter);
 			searchEnter.sendKeys(companyName,Keys.ENTER);
 			WebElement dynamicel = pbDriver.findElement(By.xpath("//td[1]//span[contains(text(),'"+companyName+"')]"));
+			
+			
 		
 			moveToElement(dynamicel);
 			jsExecutorClickOn(dynamicel);

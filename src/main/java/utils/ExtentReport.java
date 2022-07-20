@@ -26,39 +26,42 @@ public class ExtentReport {
 		
 		htmlReporter = new ExtentHtmlReporter(extentFolderPath + "\\testReport.html");
 	    extent = new ExtentReports();
+	    System.out.println(extent);
+	    extentReporterThread.set(extent);
 	    extent.attachReporter(htmlReporter);
 	    extent.setSystemInfo("OS", "MAC");
 	    htmlReporter.config().setDocumentTitle(reportTitle+" Extent Report");
 	    htmlReporter.config().setReportName(reportTitle+" Test Report");
 	    htmlReporter.config().setTheme(Theme.STANDARD);
 	   
-	   
 	}
 
-	public static void updateReportName(String Step_details) throws UnknownHostException {
-		createReportName(Step_details);
-	}
+	
 
-	 public synchronized ExtentReports getInstance() {	
+	 public synchronized  ExtentReports getInstance() {	
+		
 		 return extentReporterThread.get();
 	 }
 
 	 
-	 public static ExtentTest createReportName(String step_details) throws UnknownHostException{
-		logger = extent.createTest(step_details+"</b>"+" System Name - "+ InetAddress.getLocalHost().getHostName());
+	 public synchronized static ExtentTest createReportName(String step_details) throws UnknownHostException{
+		logger =extent.createTest(step_details+"</b>"+" System Name - "+ InetAddress.getLocalHost().getHostName());
+		System.out.println(logger);
 		extentThread.set(logger);
 		iStepNumber =1;
+		System.out.println(extentThread.get());
 		return extentThread.get();	
 		
 	 }
-	 public static ExtentTest createParentNode(String methodName) {
+	 public synchronized static  ExtentTest createParentNode(String methodName) {
+		
 
 		 parentLogger = extentThread.get().createNode(methodName);	
 		 return parentLogger;
 	 }
 	  
 	  
-	  public synchronized ExtentTest getTest() {
+	  public synchronized  ExtentTest getTest() {
 	     return extentThread.get();
 	  }
 	  
@@ -67,15 +70,8 @@ public class ExtentReport {
 	  	String ReportStatus = "<b>Step Number "+iStepNumber+"<br>Description :</b> "+description+"<br><b>Expected :</b> "+expectedStep+"<br><b>Actual :</b> "+actualStep;
 		ExcelLibraries.fExcelReporter(description, actualStep, expectedStep, status, TestUtil.getCurrentDate());
 		
-		
-		
-		
-		
 		try{
 			
-			
-			
-		
 				if(status.equalsIgnoreCase("Pass")){	
 					
 				parentLogger.createNode(description).log(Status.PASS, ReportStatus).addScreenCaptureFromPath(TestUtil.getScreenhot("PASS"));
