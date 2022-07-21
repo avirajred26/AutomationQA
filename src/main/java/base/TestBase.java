@@ -142,7 +142,7 @@ public class TestBase {
 	@BeforeTest
     public void launchApplication(String brow) throws Throwable {
 	     
-	
+	System.out.println(getClass().getSimpleName());
 		
 		ExcelLibraries.createExcel(getClass().getSimpleName());
 		
