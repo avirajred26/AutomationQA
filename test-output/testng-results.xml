@@ -2,16 +2,16 @@
 <testng-results total="2" passed="0" failed="0" skipped="2">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-07-21T06:02:31Z" name="Suite" finished-at="2022-07-21T06:02:32Z" duration-ms="1478">
+  <suite started-at="2022-07-21T09:22:42Z" name="Suite" finished-at="2022-07-21T09:23:00Z" duration-ms="18206">
     <groups>
     </groups>
-    <test started-at="2022-07-21T06:02:31Z" name="Test" finished-at="2022-07-21T06:02:32Z" duration-ms="1478">
+    <test started-at="2022-07-21T09:22:42Z" name="Test" finished-at="2022-07-21T09:23:00Z" duration-ms="18206">
       <class name="newTestcase.Tc001_Portfolio_Test">
-        <test-method is-config="true" signature="extentFileCreation()[pri:0, instance:newTestcase.Tc001_Portfolio_Test@173ed316]" started-at="2022-07-21T11:32:30Z" name="extentFileCreation" finished-at="2022-07-21T11:32:31Z" duration-ms="405" status="PASS">
+        <test-method is-config="true" signature="extentFileCreation()[pri:0, instance:newTestcase.Tc001_Portfolio_Test@563f38c4]" started-at="2022-07-21T14:52:42Z" name="extentFileCreation" finished-at="2022-07-21T14:52:42Z" duration-ms="195" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- extentFileCreation -->
-        <test-method is-config="true" signature="launchApplication(java.lang.String)[pri:0, instance:newTestcase.Tc001_Portfolio_Test@173ed316]" started-at="2022-07-21T11:32:31Z" name="launchApplication" finished-at="2022-07-21T11:32:31Z" duration-ms="0" status="FAIL">
+        <test-method is-config="true" signature="launchApplication(java.lang.String)[pri:0, instance:newTestcase.Tc001_Portfolio_Test@563f38c4]" started-at="2022-07-21T14:52:42Z" name="launchApplication" finished-at="2022-07-21T14:52:42Z" duration-ms="0" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -20,13 +20,14 @@
             </param>
           </params>
           <exception class="java.lang.NullPointerException">
-            <message>
-              <![CDATA[Cannot invoke "Object.toString()" because the return value of "org.apache.poi.ss.usermodel.Row.getCell(int)" is null]]>
-            </message>
             <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "Object.toString()" because the return value of "org.apache.poi.ss.usermodel.Row.getCell(int)" is null
-	at utils.ExcelLibraries.getTestColValue(ExcelLibraries.java:472)
-	at base.TestBase.launchApplication(TestBase.java:153)
+              <![CDATA[java.lang.NullPointerException
+	at java.base/java.util.Objects.requireNonNull(Objects.java:208)
+	at java.base/sun.nio.fs.UnixFileSystem.getPath(UnixFileSystem.java:260)
+	at java.base/java.nio.file.Path.of(Path.java:147)
+	at java.base/java.nio.file.Paths.get(Paths.java:69)
+	at utils.CSVLibrary.readColValue(CSVLibrary.java:36)
+	at base.TestBase.launchApplication(TestBase.java:155)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -55,23 +56,23 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApplication -->
-        <test-method is-config="true" signature="getFunctionName(java.lang.reflect.Method)[pri:0, instance:newTestcase.Tc001_Portfolio_Test@173ed316]" started-at="2022-07-21T11:32:32Z" name="getFunctionName" finished-at="2022-07-21T11:32:32Z" duration-ms="0" status="SKIP">
+        <test-method is-config="true" signature="getFunctionName(java.lang.reflect.Method)[pri:0, instance:newTestcase.Tc001_Portfolio_Test@563f38c4]" started-at="2022-07-21T14:53:00Z" name="getFunctionName" finished-at="2022-07-21T14:53:00Z" duration-ms="0" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getFunctionName -->
-        <test-method signature="RequireLogin()[pri:1, instance:newTestcase.Tc001_Portfolio_Test@173ed316]" started-at="2022-07-21T11:32:32Z" name="RequireLogin" finished-at="2022-07-21T11:32:32Z" duration-ms="2" status="SKIP">
+        <test-method signature="RequireLogin()[pri:1, instance:newTestcase.Tc001_Portfolio_Test@563f38c4]" started-at="2022-07-21T14:53:00Z" name="RequireLogin" finished-at="2022-07-21T14:53:00Z" duration-ms="0" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- RequireLogin -->
-        <test-method is-config="true" signature="getFunctionName(java.lang.reflect.Method)[pri:0, instance:newTestcase.Tc001_Portfolio_Test@173ed316]" started-at="2022-07-21T11:32:32Z" name="getFunctionName" finished-at="2022-07-21T11:32:32Z" duration-ms="0" status="SKIP">
+        <test-method is-config="true" signature="getFunctionName(java.lang.reflect.Method)[pri:0, instance:newTestcase.Tc001_Portfolio_Test@563f38c4]" started-at="2022-07-21T14:53:00Z" name="getFunctionName" finished-at="2022-07-21T14:53:00Z" duration-ms="0" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getFunctionName -->
-        <test-method signature="portfolioTest()[pri:2, instance:newTestcase.Tc001_Portfolio_Test@173ed316]" started-at="2022-07-21T11:32:32Z" name="portfolioTest" finished-at="2022-07-21T11:32:32Z" duration-ms="3" status="SKIP">
+        <test-method signature="portfolioTest()[pri:2, instance:newTestcase.Tc001_Portfolio_Test@563f38c4]" started-at="2022-07-21T14:53:00Z" name="portfolioTest" finished-at="2022-07-21T14:53:00Z" duration-ms="3" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- portfolioTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:newTestcase.Tc001_Portfolio_Test@173ed316]" started-at="2022-07-21T11:32:32Z" name="tearDown" finished-at="2022-07-21T11:32:32Z" duration-ms="0" status="SKIP">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:newTestcase.Tc001_Portfolio_Test@563f38c4]" started-at="2022-07-21T14:53:00Z" name="tearDown" finished-at="2022-07-21T14:53:00Z" duration-ms="0" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

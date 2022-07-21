@@ -8,7 +8,7 @@ import pages.DataUploadpage;
 import pages.LoginPage;
 import pages.PortFolioPage;
 import pages.loanApplicantPage;
-import utils.ExcelLibraries;
+import utils.CSVLibrary;
 import utils.TestUtil;
 
 public class TC005_UploadLoan extends TestBase {
@@ -25,7 +25,7 @@ public class TC005_UploadLoan extends TestBase {
 		
 		objLogin = new LoginPage(driver);
 		
-		objLogin.loginActivity(ExcelLibraries.getTestColValue("UserName"), ExcelLibraries.getTestColValue("Password"));
+		objLogin.loginActivity(CSVLibrary.readColValue("UserName"), CSVLibrary.readColValue("Password"));
 	
 		
 		//Assert.assertNotEquals(objLogin.verifyforWrongPassword(), true);

@@ -364,7 +364,7 @@ public void reporting(String desc,String exp,String actual,String status) throws
 		}
 		
 		try {
-			Assert.assertEquals(true, objPort.searchLoan(ExcelLibraries.getTestColValue("loan")));
+			Assert.assertEquals(true, objPort.searchLoan(CSVLibrary.readColValue("loan")));
 			reporting("Loan Search Validation", "Loan  should be show", "Loan shows successfully", "Pass");
 		}catch(Exception e) {
 			reporting("Loan Search Validation", "Loan should be show", "loan shows unsuccessfully", "Fail");

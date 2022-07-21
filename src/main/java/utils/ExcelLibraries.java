@@ -442,36 +442,7 @@ public class ExcelLibraries {
 	}
 	
 	
-	public static String getTestColValue(String ColumnName) throws Throwable {
-		
 	
-		
-		try {
-			cellCount = currentSheet.getRow(0).getLastCellNum();
-		}catch(Exception e) {
-			e.printStackTrace();
-		}
-		
-	      for(int i =0;i<=cellCount;i++) {
-	    	  
-	    	 
-	    	  if(currentSheet.getRow(0).getCell(i).toString().equalsIgnoreCase(ColumnName)) {
-	    		  rowCount = currentSheet.getLastRowNum();
-	    		
-		    		for(int j=1;j<=rowCount;j++) {
-		    			String testValue = currentSheet.getRow(j).getCell(0).toString();
-		    			if(testValue.equalsIgnoreCase(testCaseName)) {
-		    				testData=currentSheet.getRow(j).getCell(i).toString();
-		    				break;
-		    			}
-		    		}
-		    		break;
-	    	  } 
-	      }
-	 
-		
-		return testData;
-	}
 	
 
 	

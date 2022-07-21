@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/0/2</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Jul 21 11:32:31 IST 2022</td>
+<td>Started on:</td><td>Thu Jul 21 14:52:42 IST 2022</td>
 </tr>
-<tr><td>Total time:</td><td>1 seconds (1478 ms)</td>
+<tr><td>Total time:</td><td>18 seconds (18206 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,13 +76,21 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='newTestcase.Tc001_Portfolio_Test.launchApplication()'><b>launchApplication</b><br>Test class: newTestcase.Tc001_Portfolio_Test<br>Parameters: Chrome</td>
-<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;Object.toString()&quot; because the return value of &quot;org.apache.poi.ss.usermodel.Row.getCell(int)&quot; is null
-	at utils.ExcelLibraries.getTestColValue(ExcelLibraries.java:472)
-	at base.TestBase.launchApplication(TestBase.java:153)
-... Removed 22 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace455668354", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace455668354'><pre>java.lang.NullPointerException: Cannot invoke &quot;Object.toString()&quot; because the return value of &quot;org.apache.poi.ss.usermodel.Row.getCell(int)&quot; is null
-	at utils.ExcelLibraries.getTestColValue(ExcelLibraries.java:472)
-	at base.TestBase.launchApplication(TestBase.java:153)
+<td><div><pre>java.lang.NullPointerException
+	at java.base/java.util.Objects.requireNonNull(Objects.java:208)
+	at java.base/sun.nio.fs.UnixFileSystem.getPath(UnixFileSystem.java:260)
+	at java.base/java.nio.file.Path.of(Path.java:147)
+	at java.base/java.nio.file.Paths.get(Paths.java:69)
+	at utils.CSVLibrary.readColValue(CSVLibrary.java:36)
+	at base.TestBase.launchApplication(TestBase.java:155)
+... Removed 22 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1416665097", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1416665097'><pre>java.lang.NullPointerException
+	at java.base/java.util.Objects.requireNonNull(Objects.java:208)
+	at java.base/sun.nio.fs.UnixFileSystem.getPath(UnixFileSystem.java:260)
+	at java.base/java.nio.file.Path.of(Path.java:147)
+	at java.base/java.nio.file.Paths.get(Paths.java:69)
+	at utils.CSVLibrary.readColValue(CSVLibrary.java:36)
+	at base.TestBase.launchApplication(TestBase.java:155)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -120,12 +128,12 @@ function toggleAllBoxes() {
 <td title='newTestcase.Tc001_Portfolio_Test.getFunctionName()'><b>getFunctionName</b><br>Test class: newTestcase.Tc001_Portfolio_Test</td>
 <td></td>
 <td>0</td>
-<td>newTestcase.Tc001_Portfolio_Test@173ed316</td></tr>
+<td>newTestcase.Tc001_Portfolio_Test@563f38c4</td></tr>
 <tr>
 <td title='newTestcase.Tc001_Portfolio_Test.getFunctionName()'><b>getFunctionName</b><br>Test class: newTestcase.Tc001_Portfolio_Test</td>
 <td></td>
 <td>0</td>
-<td>newTestcase.Tc001_Portfolio_Test@173ed316</td></tr>
+<td>newTestcase.Tc001_Portfolio_Test@563f38c4</td></tr>
 <tr>
 <td title='newTestcase.Tc001_Portfolio_Test.tearDown()'><b>tearDown</b><br>Test class: newTestcase.Tc001_Portfolio_Test</td>
 <td></td>
@@ -143,12 +151,12 @@ function toggleAllBoxes() {
 <td title='newTestcase.Tc001_Portfolio_Test.RequireLogin()'><b>RequireLogin</b><br>Test class: newTestcase.Tc001_Portfolio_Test</td>
 <td></td>
 <td>0</td>
-<td>newTestcase.Tc001_Portfolio_Test@173ed316</td></tr>
+<td>newTestcase.Tc001_Portfolio_Test@563f38c4</td></tr>
 <tr>
 <td title='newTestcase.Tc001_Portfolio_Test.portfolioTest()'><b>portfolioTest</b><br>Test class: newTestcase.Tc001_Portfolio_Test</td>
 <td></td>
 <td>0</td>
-<td>newTestcase.Tc001_Portfolio_Test@173ed316</td></tr>
+<td>newTestcase.Tc001_Portfolio_Test@563f38c4</td></tr>
 </table><p>
 </body>
 </html>

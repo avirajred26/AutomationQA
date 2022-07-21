@@ -18,7 +18,9 @@ import pages.CreateCompnayPage;
 import pages.LoginPage;
 import pages.PortFolioPage;
 import pages.Settingpage;
-import utils.ExcelLibraries;
+import utils.CSVLibrary;
+
+//import utils.CSVLibrary;
 
 
 
@@ -39,7 +41,7 @@ public class HC_Create_User_2 extends TestBase {
 		
 	
 		
-		objLogin.loginActivity(ExcelLibraries.getTestColValue("UserName"), ExcelLibraries.getTestColValue("Password"));
+		objLogin.loginActivity(CSVLibrary.readColValue("UserName"), CSVLibrary.readColValue("Password"));
 		
 		
 		

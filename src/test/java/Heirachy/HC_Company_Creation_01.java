@@ -14,6 +14,7 @@ import pages.AccountCreationPage;
 import pages.CreateCompnayPage;
 import pages.LoginPage;
 import pages.PortFolioPage;
+import utils.CSVLibrary;
 import utils.ExcelLibraries;
 
 
@@ -36,7 +37,7 @@ public class HC_Company_Creation_01 extends TestBase {
 		
 	
 		
-		objLogin.loginActivity(ExcelLibraries.getTestColValue("UserName"), ExcelLibraries.getTestColValue("Password"));
+		objLogin.loginActivity(CSVLibrary.readColValue("UserName"), CSVLibrary.readColValue("Password"));
 		
 		
 		
@@ -58,11 +59,11 @@ public class HC_Company_Creation_01 extends TestBase {
 		
 		//objAcc.singleCreateAccount();
 		
-		objCreate.applyCompanyDetails(ExcelLibraries.getTestColValue("companyName"),ExcelLibraries.getTestColValue("companyEmail"),ExcelLibraries.getTestColValue("companyTrademark"),ExcelLibraries.getTestColValue("authorname"),ExcelLibraries.getTestColValue("authoremail"));
+		objCreate.applyCompanyDetails(CSVLibrary.readColValue("companyName"),CSVLibrary.readColValue("companyEmail"),CSVLibrary.readColValue("companyTrademark"),CSVLibrary.readColValue("authorname"),CSVLibrary.readColValue("authoremail"));
 		objCreate.applyPermission();
-		newUser = objCreate.addAdmin(ExcelLibraries.getTestColValue("adminname"),ExcelLibraries.getTestColValue("adminlname"),ExcelLibraries.getTestColValue("adminemail"));
+		newUser = objCreate.addAdmin(CSVLibrary.readColValue("adminname"),CSVLibrary.readColValue("adminlname"),CSVLibrary.readColValue("adminemail"));
 		
-		
+		//CSVLibrary.readColValue
 	}
 	
 	

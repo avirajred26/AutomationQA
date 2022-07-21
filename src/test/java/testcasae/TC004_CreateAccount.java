@@ -7,7 +7,7 @@ import base.TestBase;
 import pages.LoginPage;
 import pages.NoticePage;
 import pages.*;
-import utils.ExcelLibraries;
+import utils.CSVLibrary;
 import utils.TestUtil;
 
 public class TC004_CreateAccount extends TestBase {
@@ -22,7 +22,7 @@ public class TC004_CreateAccount extends TestBase {
 	
 		objLogin = new LoginPage(driver);
 		
-		objLogin.loginActivity(ExcelLibraries.getTestColValue("UserName"), ExcelLibraries.getTestColValue("Password"));
+		objLogin.loginActivity(CSVLibrary.readColValue("UserName"), CSVLibrary.readColValue("Password"));
 		
 		//Assert.assertNotEquals(objLogin.verifyforWrongPassword(), true);
 		
