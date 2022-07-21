@@ -1,0 +1,2 @@
+TestCase,UserName,Password,Status,companyName,companyTrademark,companyEmail,authorname,authoremail,adminname,adminemail,adminlname
+Tc001_Portfolio_Test,dummyadmin@yopmail.com,Test@123,TRUE,qaTesting,testingQA,testingqates4t1@yopmail.com,Tester,tester123@yopmail.com,companyAdmin,admincc11211@yopmail.com,Hello
