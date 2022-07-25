@@ -83,6 +83,8 @@ import pages.LoginPage;
 import pages.PortFolioPage;
 
 import java.util.Optional;
+
+import utils.CSVLibrary;
 import utils.ExcelLibraries;
 import utils.ExtentReport;
 import utils.TestUtil;
@@ -141,8 +143,10 @@ public class TestBase {
 	@Parameters("browser")
 	@BeforeTest
     public void launchApplication(String brow) throws Throwable {
+		
+		CSVLibrary.TestCaseName = getClass().getSimpleName();
 	     
-	
+	System.out.println(getClass().getSimpleName());
 		
 		ExcelLibraries.createExcel(getClass().getSimpleName());
 		
@@ -150,7 +154,8 @@ public class TestBase {
 		
 	
 		
-		testStatus = Boolean.valueOf(ExcelLibraries.getTestColValue("Status"));
+		testStatus = Boolean.valueOf(CSVLibrary.readColValue("Status"));
+		
 		
 		if(!testStatus) {
 			ExtentReport.skipReport();
@@ -336,7 +341,7 @@ public void reporting(String desc,String exp,String actual,String status) throws
     	
     	objLogin = new LoginPage(driver);
 		
-		objLogin.loginActivity(ExcelLibraries.getTestColValue("UserName"), ExcelLibraries.getTestColValue("Password"));
+		objLogin.loginActivity(CSVLibrary.readColValue("UserName"), CSVLibrary.readColValue("Password"));
 		
 		Assert.assertNotEquals(objLogin.verifyforWrongPassword(), true);
 		
@@ -359,7 +364,7 @@ public void reporting(String desc,String exp,String actual,String status) throws
 		}
 		
 		try {
-			Assert.assertEquals(true, objPort.searchLoan(ExcelLibraries.getTestColValue("loan")));
+			Assert.assertEquals(true, objPort.searchLoan(CSVLibrary.readColValue("loan")));
 			reporting("Loan Search Validation", "Loan  should be show", "Loan shows successfully", "Pass");
 		}catch(Exception e) {
 			reporting("Loan Search Validation", "Loan should be show", "loan shows unsuccessfully", "Fail");

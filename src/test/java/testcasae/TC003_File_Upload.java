@@ -9,7 +9,7 @@ import pages.LoginPage;
 import pages.NoticePage;
 import pages.PortFolioPage;
 import pages.loanApplicantPage;
-import utils.ExcelLibraries;
+import utils.CSVLibrary;
 import utils.TestUtil;
 
 
@@ -25,7 +25,7 @@ NoticePage objNotice;
 	
 		objLogin = new LoginPage(driver);
 		
-		objLogin.loginActivity(ExcelLibraries.getTestColValue("UserName"), ExcelLibraries.getTestColValue("Password"));
+		objLogin.loginActivity(CSVLibrary.readColValue("UserName"), CSVLibrary.readColValue("Password"));
 		
 		//Assert.assertNotEquals(objLogin.verifyforWrongPassword(), true);
 		

@@ -8,7 +8,7 @@ import base.TestBase;
 import pages.LoginPage;
 import pages.PortFolioPage;
 import pages.loanApplicantPage;
-import utils.ExcelLibraries;
+import utils.CSVLibrary;
 
 
 public class TC001_Login_Cred extends TestBase{
@@ -33,7 +33,7 @@ public class TC001_Login_Cred extends TestBase{
 		
 		
 		try{
-			checkFun = objappli.editLoan(ExcelLibraries.getTestColValue("applicant_email"), ExcelLibraries.getTestColValue("applicant_contact"), ExcelLibraries.getTestColValue("tabName"));
+			checkFun = objappli.editLoan(CSVLibrary.readColValue("applicant_email"), CSVLibrary.readColValue("applicant_contact"), CSVLibrary.readColValue("tabName"));
 			
 			if(checkFun) {
 				reporting("Loan edit Validation", "Loan Should be edit Successfully", "Loan Edit Successfully", "Pass");

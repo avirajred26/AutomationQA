@@ -58,8 +58,30 @@ public class ExcelLibraries {
 	static XSSFCell cell;
 	public static String testCaseName,testData ,strTestCaseName,strColName,methodname;
 	public static Map<String, List<String> > permisson_set = new LinkedHashMap<>();
+	public  static FileInputStream ExcelFile;
 	
-	
+	static {
+		
+		
+		try {
+			workBook = new XSSFWorkbook();
+			
+			ExcelFile = new FileInputStream(System.getProperty("user.dir")+ "/src/main/java/config/dataFile1.xlsx");
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	      
+	      try {
+			workBook = new XSSFWorkbook(ExcelFile);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	      currentSheet = workBook.getSheet("sheet1");
+		
+		
+	}
 	
 	
 	public static  String createExcel(String Reportname) throws InvalidFormatException, IOException, Throwable{
@@ -208,11 +230,7 @@ public class ExcelLibraries {
 		String[][] tabArray = null;
 	      
 		try{
-	      FileInputStream ExcelFile = new FileInputStream(System.getProperty("user.dir")+ "/src/main/java/"
-					+ "config/dataFile.xlsx");
-	      
-	      workBook = new XSSFWorkbook(ExcelFile);
-	      currentSheet = workBook.getSheet("sheet1");
+	   
 		   
 	      int startCol = 1;
 	      int ci=0,cj=0;
@@ -316,15 +334,7 @@ public class ExcelLibraries {
 	
 	public static void setExcelOutput(String ColumnName,String Output) throws Throwable {
 		
-		workBook = new XSSFWorkbook();
-		try{
-			FileInputStream fin=new FileInputStream(System.getProperty("user.dir")+ "/src/main/java/"
-					+ "config/dataFile.xlsx");
-			workBook=(XSSFWorkbook) WorkbookFactory.create(fin);
-		}
-		catch(Exception e){
-			System.out.println(e);
-		}
+	
 			
 		currentSheet = workBook.getSheet("Sheet2");
 		
@@ -374,7 +384,7 @@ public class ExcelLibraries {
 	      
 	      iActiveRow=iActiveRow+1;
 		FileOutputStream fout = new FileOutputStream(System.getProperty("user.dir")+ "/src/main/java/"
-				+ "config/dataFile.xlsx");
+				+ "config/dataFile1.xlsx");
 		workBook.write(fout);
 		fout.close();
 	}
@@ -383,16 +393,7 @@ public class ExcelLibraries {
 	//Getting Excel Output with same Test case Name & Different test case Name
 	public static String getExcelOutput(String ColumnName) throws Throwable {
 		
-		workBook = new XSSFWorkbook();
-		try{
-			FileInputStream fin=new FileInputStream(System.getProperty("user.dir")+ "/src/main/java/"
-					+ "config/dataFile.xlsx");
-			workBook=(XSSFWorkbook) WorkbookFactory.create(fin);
-		}
-		catch(Exception e){
-			System.out.println(e);
-		}
-			
+	
 	
 		currentSheet = workBook.getSheet("Sheet2");
 		
@@ -433,7 +434,7 @@ public class ExcelLibraries {
 	      }
 	     iSetRow = iSetRow+1;
 		FileOutputStream fout = new FileOutputStream(System.getProperty("user.dir")+ "/src/main/java/"
-				+ "config/dataFile.xlsx");
+				+ "config/dataFile1.xlsx");
 		workBook.write(fout);
 		fout.close();
 		testCaseName = reporter;
@@ -441,50 +442,7 @@ public class ExcelLibraries {
 	}
 	
 	
-	public static String getTestColValue(String ColumnName) throws Throwable {
-		
-		workBook = new XSSFWorkbook();
-		try{
-			FileInputStream fin=new FileInputStream(System.getProperty("user.dir")+ "/src/main/java/"
-					+ "config/dataFile.xlsx");
-			workBook=(XSSFWorkbook) WorkbookFactory.create(fin);
-		}
-		catch(Exception e){
-			System.out.println(e);
-		}
-			
 	
-		currentSheet = workBook.getSheet("Sheet1");
-		
-		try {
-			cellCount = currentSheet.getRow(0).getLastCellNum();
-		}catch(Exception e) {
-			e.printStackTrace();
-		}
-		
-	      for(int i =0;i<=cellCount;i++) {
-	    	  
-	    	 
-	    	  if(currentSheet.getRow(0).getCell(i).toString().equalsIgnoreCase(ColumnName)) {
-	    		  rowCount = currentSheet.getLastRowNum();
-	    		
-		    		for(int j=1;j<=rowCount;j++) {
-		    			String testValue = currentSheet.getRow(j).getCell(0).toString();
-		    			if(testValue.equalsIgnoreCase(testCaseName)) {
-		    				testData=currentSheet.getRow(j).getCell(i).toString();
-		    				break;
-		    			}
-		    		}
-		    		break;
-	    	  } 
-	      }
-	 
-		FileOutputStream fout = new FileOutputStream(System.getProperty("user.dir")+ "/src/main/java/"
-				+ "config/dataFile.xlsx");
-		workBook.write(fout);
-		fout.close();
-		return testData;
-	}
 	
 
 	

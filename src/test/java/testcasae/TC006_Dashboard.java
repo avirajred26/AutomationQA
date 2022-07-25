@@ -8,7 +8,7 @@ import pages.DashBoardPage;
 import pages.LoginPage;
 import pages.PortFolioPage;
 
-import utils.ExcelLibraries;
+import utils.CSVLibrary;
 
 public class TC006_Dashboard extends TestBase {
 
@@ -28,7 +28,7 @@ public class TC006_Dashboard extends TestBase {
 	
 		objLogin = new LoginPage(driver);
 		
-		objLogin.loginActivity(ExcelLibraries.getTestColValue("UserName"), ExcelLibraries.getTestColValue("Password"));
+		objLogin.loginActivity(CSVLibrary.readColValue("UserName"), CSVLibrary.readColValue("Password"));
 		
 		
 		
@@ -53,7 +53,7 @@ public class TC006_Dashboard extends TestBase {
 		}
 		
 		try {
-			Assert.assertEquals(true, objPort.searchLoan(ExcelLibraries.getTestColValue("loan")));
+			Assert.assertEquals(true, objPort.searchLoan(CSVLibrary.readColValue("loan")));
 			reporting("Loan Search Validation", "Loan  should be show", "Loan shows successfully", "Pass");
 		}catch(Exception e) {
 			reporting("Loan Search Validation", "Loan should be show", "loan shows unsuccessfully", "Fail");
