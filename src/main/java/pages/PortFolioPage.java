@@ -7,11 +7,14 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.Select;
 
 import base.PageBase;
 import utils.TestUtil;
 
 public class PortFolioPage extends PageBase {
+	
+	WebDriver driver;
 
 	@FindBy(xpath = "//table[@class='capitalize admin_portfolio_table table']//tbody//tr[1]//td[1]//a")
 	public WebElement credgenicsCompany;
@@ -299,5 +302,110 @@ public class PortFolioPage extends PageBase {
 		
 	}
 	
+//------ export page --------------------
 	
-}
+	private	By SelectCompany = By.xpath("//span[@class='blue-id']");
+
+	private	By SelectCheckbox = By.xpath("//input[@id='all']");
+
+	private	By clickExportButton = By.xpath("//span[@class='new-download']");
+
+	private	By SelectExportType = By.xpath("//select[@name='export_type']");
+
+	private	By SelectExportOption = By.xpath("//select[@name='export_type_sub']");
+
+	private	By DownloadExcelButton = By.xpath("//button[@class='btn-primary btn float-right']");
+
+
+		
+	/*	@FindBy(xpath = "//span[@class='blue-id']")
+		public WebElement SelectCompany;   
+		
+		@FindBy(xpath = "//input[@id='all']")
+		public WebElement SelectCheckbox;
+		
+		@FindBy(xpath = "//span[@class='new-download']")
+		public WebElement clickExportButton;
+		
+		@FindBy(xpath = "//select[@name='export_type']")
+		public WebElement SelectExportType;
+		
+		@FindBy(xpath = "//select[@name='export_type_sub']")
+		public WebElement ExportOption;
+		
+		@FindBy(xpath = "//button[@class='btn-primary btn float-right']")
+		public WebElement DownloadExcelButton;     */
+		
+/*	public ExportPage(WebDriver driver) {
+			
+			setWebDriver(driver);
+		
+		}   */
+		
+	public void setSelectCompany(String company) {
+		List<WebElement> option =  driver.findElements(SelectCompany) ;    
+		for (int i = 0; i < option.size(); i++) {
+			if (option.get(i).getText().contains(company)) {
+				option.get(i).click();
+				break;
+			}
+		}
+		}
+		
+		public void setSelectCheckbox(String SelectCompany) {
+			driver.findElement(SelectCheckbox).click();
+		}
+		
+		public void setExportButton(String SelectCompany) {
+			driver.findElement(clickExportButton).click();
+		}
+
+		public void setExportType(String ExportType) {
+			WebElement element1=	driver.findElement(SelectExportType);
+			Select select1 = new Select(element1);
+			select1.selectByVisibleText(ExportType);
+		}
+
+		public void setExportOption(String ExportOption) {		
+			WebElement element2=	driver.findElement(SelectExportOption);
+			Select select2 = new Select(element2);
+			select2.selectByVisibleText(ExportOption);
+		}
+		
+		public void setDownloadExcelButton(String SelectCompany) {
+			driver.findElement(DownloadExcelButton).click();
+		}	
+		
+		
+		
+
+	}
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
