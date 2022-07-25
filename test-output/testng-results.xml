@@ -1,36 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results total="2" passed="0" failed="0" skipped="2">
+<testng-results total="1" passed="0" failed="0" skipped="1">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-07-22T10:10:46Z" name="Suite" finished-at="2022-07-22T10:10:52Z" duration-ms="6118">
+  <suite started-at="2022-07-25T07:44:57Z" name="Default suite" finished-at="2022-07-25T07:44:57Z" duration-ms="23">
     <groups>
     </groups>
-    <test started-at="2022-07-22T10:10:46Z" name="Test" finished-at="2022-07-22T10:10:52Z" duration-ms="6118">
-      <class name="newTestcase.Tc001_Portfolio_Test">
-        <test-method is-config="true" signature="extentFileCreation()[pri:0, instance:newTestcase.Tc001_Portfolio_Test@46b61c56]" started-at="2022-07-22T15:40:46Z" name="extentFileCreation" finished-at="2022-07-22T15:40:46Z" duration-ms="242" status="PASS">
+    <test started-at="2022-07-25T07:44:57Z" name="Default test" finished-at="2022-07-25T07:44:57Z" duration-ms="23">
+      <class name="base.TestBase">
+        <test-method is-config="true" signature="extentFileCreation()[pri:0, instance:base.TestBase@27406a17]" started-at="2022-07-25T13:14:57Z" name="extentFileCreation" finished-at="2022-07-25T13:14:57Z" duration-ms="160" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- extentFileCreation -->
-        <test-method is-config="true" signature="launchApplication(java.lang.String)[pri:0, instance:newTestcase.Tc001_Portfolio_Test@46b61c56]" started-at="2022-07-22T15:40:46Z" name="launchApplication" finished-at="2022-07-22T15:40:46Z" duration-ms="0" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Chrome]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.NullPointerException">
+        <test-method is-config="true" signature="launchApplication(java.lang.String)[pri:0, instance:base.TestBase@27406a17]" started-at="2022-07-25T13:14:57Z" name="launchApplication" finished-at="2022-07-25T13:14:57Z" duration-ms="0" status="FAIL">
+          <exception class="org.testng.TestNGException">
+            <message>
+              <![CDATA[
+Parameter 'browser' is required by @Configuration on method launchApplication but has not been marked @Optional or defined
+in /private/var/folders/26/gxg2cjsd2dl3xr3zj0xnlc300000gp/T/testng-eclipse-1730237745/testng-customsuite.xml]]>
+            </message>
             <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException
-	at utils.ExcelLibraries.getTestColValue(ExcelLibraries.java:458)
-	at base.TestBase.launchApplication(TestBase.java:152)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
-	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:514)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:215)
+              <![CDATA[org.testng.TestNGException: 
+Parameter 'browser' is required by @Configuration on method launchApplication but has not been marked @Optional or defined
+in /private/var/folders/26/gxg2cjsd2dl3xr3zj0xnlc300000gp/T/testng-eclipse-1730237745/testng-customsuite.xml
+	at org.testng.internal.Parameters.createParameters(Parameters.java:154)
+	at org.testng.internal.Parameters.createParameters(Parameters.java:361)
+	at org.testng.internal.Parameters.createConfigurationParameters(Parameters.java:84)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:201)
 	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:142)
 	at org.testng.TestRunner.beforeRun(TestRunner.java:656)
 	at org.testng.TestRunner.run(TestRunner.java:624)
@@ -48,31 +43,23 @@
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+          </exception> <!-- org.testng.TestNGException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApplication -->
-        <test-method is-config="true" signature="getFunctionName(java.lang.reflect.Method)[pri:0, instance:newTestcase.Tc001_Portfolio_Test@46b61c56]" started-at="2022-07-22T15:40:52Z" name="getFunctionName" finished-at="2022-07-22T15:40:52Z" duration-ms="0" status="SKIP">
+        <test-method is-config="true" signature="getFunctionName(java.lang.reflect.Method)[pri:0, instance:base.TestBase@27406a17]" started-at="2022-07-25T13:14:57Z" name="getFunctionName" finished-at="2022-07-25T13:14:57Z" duration-ms="0" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getFunctionName -->
-        <test-method signature="RequireLogin()[pri:1, instance:newTestcase.Tc001_Portfolio_Test@46b61c56]" started-at="2022-07-22T15:40:52Z" name="RequireLogin" finished-at="2022-07-22T15:40:52Z" duration-ms="1" status="SKIP">
+        <test-method signature="RequireLogin()[pri:1, instance:base.TestBase@27406a17]" started-at="2022-07-25T13:14:57Z" name="RequireLogin" finished-at="2022-07-25T13:14:57Z" duration-ms="2" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- RequireLogin -->
-        <test-method is-config="true" signature="getFunctionName(java.lang.reflect.Method)[pri:0, instance:newTestcase.Tc001_Portfolio_Test@46b61c56]" started-at="2022-07-22T15:40:52Z" name="getFunctionName" finished-at="2022-07-22T15:40:52Z" duration-ms="0" status="SKIP">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getFunctionName -->
-        <test-method signature="portfolioTest()[pri:2, instance:newTestcase.Tc001_Portfolio_Test@46b61c56]" started-at="2022-07-22T15:40:52Z" name="portfolioTest" finished-at="2022-07-22T15:40:52Z" duration-ms="3" status="SKIP">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- portfolioTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:newTestcase.Tc001_Portfolio_Test@46b61c56]" started-at="2022-07-22T15:40:52Z" name="tearDown" finished-at="2022-07-22T15:40:52Z" duration-ms="0" status="SKIP">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:base.TestBase@27406a17]" started-at="2022-07-25T13:14:57Z" name="tearDown" finished-at="2022-07-25T13:14:57Z" duration-ms="0" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- newTestcase.Tc001_Portfolio_Test -->
-    </test> <!-- Test -->
-  </suite> <!-- Suite -->
+      </class> <!-- base.TestBase -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

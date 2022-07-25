@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.StringReader;
+import java.lang.invoke.TypeDescriptor.OfField;
 import java.lang.reflect.Method;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -82,6 +83,8 @@ import pages.LoginPage;
 import pages.PortFolioPage;
 
 import java.util.Optional;
+
+import utils.CSVLibrary;
 import utils.ExcelLibraries;
 import utils.ExtentReport;
 import utils.TestUtil;
@@ -140,6 +143,8 @@ public class TestBase {
 	@Parameters("browser")
 	@BeforeTest
     public void launchApplication(String brow) throws Throwable {
+		
+		CSVLibrary.TestCaseName = getClass().getSimpleName();
 	     
 	System.out.println(getClass().getSimpleName());
 		
@@ -149,7 +154,8 @@ public class TestBase {
 		
 	
 		
-		testStatus = Boolean.valueOf(ExcelLibraries.getTestColValue("Status"));
+		testStatus = Boolean.valueOf(CSVLibrary.readColValue("Status"));
+		
 		
 		if(!testStatus) {
 			ExtentReport.skipReport();
@@ -335,9 +341,9 @@ public void reporting(String desc,String exp,String actual,String status) throws
     	
     	objLogin = new LoginPage(driver);
 		
-		objLogin.loginActivity(ExcelLibraries.getTestColValue("UserName"), ExcelLibraries.getTestColValue("Password"));
+		objLogin.loginActivity(CSVLibrary.readColValue("UserName"), CSVLibrary.readColValue("Password"));
 		
-	//	Assert.assertNotEquals(objLogin.verifyforWrongPassword(), true);
+		Assert.assertNotEquals(objLogin.verifyforWrongPassword(), true);
 		
 		reporting("Login-OTP Validation", "User should be able to get OTP", "User Successfully navigate to OTP Page", "Pass");
 		
@@ -358,7 +364,7 @@ public void reporting(String desc,String exp,String actual,String status) throws
 		}
 		
 		try {
-			Assert.assertEquals(true, objPort.searchLoan(ExcelLibraries.getTestColValue("loan")));
+			Assert.assertEquals(true, objPort.searchLoan(CSVLibrary.readColValue("loan")));
 			reporting("Loan Search Validation", "Loan  should be show", "Loan shows successfully", "Pass");
 		}catch(Exception e) {
 			reporting("Loan Search Validation", "Loan should be show", "loan shows unsuccessfully", "Fail");

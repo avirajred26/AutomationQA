@@ -10,7 +10,7 @@ import pages.DataUploadpage;
 import pages.LoginPage;
 import pages.PortFolioPage;
 import pages.loanApplicantPage;
-import utils.ExcelLibraries;
+import utils.CSVLibrary;
 
 public class TC002_CheckData  extends TestBase{
 	
@@ -25,7 +25,7 @@ public class TC002_CheckData  extends TestBase{
 	
 		objLogin = new LoginPage(driver);
 		
-		objLogin.loginActivity(ExcelLibraries.getTestColValue("UserName"), ExcelLibraries.getTestColValue("Password"));
+		objLogin.loginActivity(CSVLibrary.readColValue("UserName"), CSVLibrary.readColValue("Password"));
 		
 		Assert.assertNotEquals(objLogin.verifyforWrongPassword(), true);
 		
@@ -52,7 +52,7 @@ public class TC002_CheckData  extends TestBase{
 		}
 		
 		try {
-			AssertJUnit.assertEquals(true, objPort.searchLoan(ExcelLibraries.getTestColValue("loan")));
+			AssertJUnit.assertEquals(true, objPort.searchLoan(CSVLibrary.readColValue("loan")));
 			reporting("Loan Search Validation", "Loan  should be show", "Loan shows successfully", "Pass");
 		}catch(Exception e) {
 			reporting("Loan Search Validation", "Loan should be show", "loan shows unsuccessfully", "Fail");
