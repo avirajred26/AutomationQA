@@ -13,10 +13,12 @@
     <classes>
       <class name="newTestcase.Tc001_Portfolio_Test">
         <methods>
+          <include name="getFunctionName"/>
           <include name="RequireLogin"/>
           <include name="launchApplication"/>
           <include name="portfolioTest"/>
           <include name="extentFileCreation"/>
+          <include name="tearDown"/>
         </methods>
       </class> <!-- newTestcase.Tc001_Portfolio_Test -->
     </classes>

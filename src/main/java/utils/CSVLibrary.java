@@ -33,13 +33,25 @@ public class CSVLibrary {
 	
 	
 	static {
+		
+		
+		
+		
+		
+		
+		
+	}
+	
+    
+	public static String readColValue(String ColName) throws IOException, CsvException {
+	
+	
 		try {
 			reader = Files.newBufferedReader(Paths.get(CSVPath));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 		
 		
 		try {
@@ -52,22 +64,26 @@ public class CSVLibrary {
 			e.printStackTrace();
 		}
 		
-	}
-	
-	
-    
-	public static String readColValue(String ColName) throws IOException, CsvException {
 		
-         for (CSVRecord csvRecord : csvParser) {
-        	 
-        	 if(csvRecord.get("TestCase").toString().equalsIgnoreCase(TestCaseName)) {
-        		 String name = csvRecord.get(ColName);
-                 return name;
-        	 }  
-         }
+        try {
+        	for (CSVRecord csvRecord : csvParser) {
+           	 
+           	 if(csvRecord.get("TestCase").toString().equalsIgnoreCase(TestCaseName)) {
+           		 String name = csvRecord.get(ColName);
+                    return name;
+           	 }  
+            }
+        }
+        catch(Exception e) {
+        	System.out.println(e);
+        }
+		
          
          return null;
          	
 	}
+	
+	
+	
 
 }

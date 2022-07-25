@@ -1,24 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite parallel="none" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <parameter name="browser" value="Chrome"/>
-  <test name="Test">
-    <parameter name="browser" value="Chrome"/>
+<suite parallel="none" name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test name="Default test" verbose="2">
     <classes>
-      <class name="newTestcase.Tc001_Portfolio_Test"/>
+      <class name="base.TestBase"/>
     </classes>
-  </test> <!-- Test -->
-  <test parallel="none" name="Test(failed)">
-    <parameter name="browser" value="Chrome"/>
+  </test> <!-- Default test -->
+  <test parallel="none" name="Default test(failed)">
     <classes>
-      <class name="newTestcase.Tc001_Portfolio_Test">
+      <class name="base.TestBase">
         <methods>
           <include name="RequireLogin"/>
-          <include name="launchApplication"/>
-          <include name="portfolioTest"/>
           <include name="extentFileCreation"/>
         </methods>
-      </class> <!-- newTestcase.Tc001_Portfolio_Test -->
+      </class> <!-- base.TestBase -->
     </classes>
-  </test> <!-- Test(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
