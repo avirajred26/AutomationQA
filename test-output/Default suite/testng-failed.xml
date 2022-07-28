@@ -3,7 +3,17 @@
 <suite parallel="none" name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test name="Default test" verbose="2">
     <classes>
-      <class name="utils.CSVLibrary"/>
+      <class name="base.TestBase"/>
     </classes>
   </test> <!-- Default test -->
+  <test parallel="none" name="Default test(failed)">
+    <classes>
+      <class name="base.TestBase">
+        <methods>
+          <include name="RequireLogin"/>
+          <include name="extentFileCreation"/>
+        </methods>
+      </class> <!-- base.TestBase -->
+    </classes>
+  </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

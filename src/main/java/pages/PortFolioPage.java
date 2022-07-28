@@ -16,7 +16,7 @@ public class PortFolioPage extends PageBase {
 	@FindBy(xpath = "//table[@class='capitalize admin_portfolio_table table']//tbody//tr[1]//td[1]//a")
 	public WebElement credgenicsCompany;
 	
-	@FindBy(css = "#searchKeyword")
+	@FindBy(css = "//input[@id='searchKeyword']")
 	public WebElement searchEnter;
 	
 	
@@ -91,7 +91,7 @@ public class PortFolioPage extends PageBase {
 	
 	
 	
-	@FindBy(className  = "simple-icon-pencil f-size-12 ml10")
+	@FindBy(xpath  = "//i[@class='simple-icon-pencil f-size-12 ml10'][1]")
 	public WebElement pencilIcon;
 	
 	
