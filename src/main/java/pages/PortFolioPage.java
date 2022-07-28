@@ -23,7 +23,7 @@ public class PortFolioPage extends PageBase {
 	@FindBy(xpath = "//table[@class='capitalize admin_portfolio_table table']//tbody//tr[1]//td[1]//a//span[1]")
 	public WebElement searchClicked;
 	
-	@FindBy(xpath = "//body/div[@id='root']/div[1]/div[2]/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]")
+	@FindBy(xpath = "//div[@class='mb-4 c_shadow'][1]")
 	public WebElement portTable;
 	
 	
