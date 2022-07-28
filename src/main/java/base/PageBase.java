@@ -17,7 +17,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class PageBase {
 	protected static WebDriver pbDriver;
 	private WebDriverWait wait;
-	private static final int iTimeOut = 5; //seconds
+	private static final int iTimeOut = 20; //seconds
 	private  static final int iPolling = 1; //milliseconds
 	
 	    
@@ -26,7 +26,7 @@ public class PageBase {
 		PageBase.pbDriver = driver;
 		wait =  new WebDriverWait(driver, Duration.ofSeconds(iTimeOut,iPolling));
 		
-	    PageFactory.initElements(PageBase.pbDriver, this);
+	    PageFactory.initElements(new AjaxElementLocatorFactory(PageBase.pbDriver, iTimeOut), this);
 	}
 	
 	protected void waitForElementToAppear(WebElement element) {

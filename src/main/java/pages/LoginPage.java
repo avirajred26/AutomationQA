@@ -117,7 +117,6 @@ public class LoginPage extends PageBase {
 		pWindow =  pbDriver.getWindowHandle();
 		openTab();
 		
-	
 	 	Set<String> setWindows = pbDriver.getWindowHandles();
 		for(String x:setWindows) {
 			if(!pWindow.equals(x)) {

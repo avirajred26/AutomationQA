@@ -20,7 +20,7 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.FileHandler;
-
+import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -163,7 +163,7 @@ public class TestBase {
 		}
 		
 		LoggingPreferences preferences = new LoggingPreferences();
-		//preferences.enable(LogType.CLIENT, Level.ALL);
+		preferences.enable(LogType.CLIENT, Level.ALL);
 
 		 option = new ChromeOptions();
 		option.setCapability(CapabilityType.LOGGING_PREFS, preferences);
@@ -353,18 +353,7 @@ public void reporting(String desc,String exp,String actual,String status) throws
 		
 		reporting("Login Validation", "User should be able to login", "User Successfully Loggedin", "Pass");
 		
-		
-    }
-		
-		
-		  @Test(priority = 2)
-		    public  void PortfolioTest() throws Throwable {
-		
-		
-		objPort = new PortFolioPage(driver);
-		
-		
-		
+		objPort=new PortFolioPage(driver);
 		objPort.clickOnCompany("Click", "");
 		Thread.sleep(5000);
 		try {
