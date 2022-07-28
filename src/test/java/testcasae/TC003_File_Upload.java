@@ -6,7 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import base.TestBase;
 import pages.LoginPage;
-import pages.NoticePage;
+import pages.NoticeDraftPage;
 import pages.PortFolioPage;
 import pages.loanApplicantPage;
 import utils.CSVLibrary;
@@ -17,7 +17,7 @@ public class TC003_File_Upload extends TestBase{
 	
 	LoginPage objLogin;
 	PortFolioPage objPort;
-NoticePage objNotice;
+NoticeDraftPage objNotice;
 	
 	@Test(priority = 1)
 	public void loginTest() throws Throwable   {
@@ -53,9 +53,9 @@ NoticePage objNotice;
 		
 		objPort.selectMenu("Notice Drafts");
 		
-		objNotice = new NoticePage(driver);
+		objNotice = new NoticeDraftPage(driver);
 		
-		objNotice.noticeDraftCreation("","Auto_Test21"+TestUtil.getTimeStamp());
+		//objNotice.noticeDraftCreation("","Auto_Test21"+TestUtil.getTimeStamp());
 		
 	
 	

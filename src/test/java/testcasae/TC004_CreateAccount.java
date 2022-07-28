@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 import base.TestBase;
 import pages.LoginPage;
-import pages.NoticePage;
+import pages.NoticeDraftPage;
 import pages.*;
 import utils.CSVLibrary;
 import utils.TestUtil;

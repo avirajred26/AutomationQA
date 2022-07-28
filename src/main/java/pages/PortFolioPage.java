@@ -12,12 +12,19 @@ import base.PageBase;
 import utils.TestUtil;
 
 public class PortFolioPage extends PageBase {
+	
+	
+	
+	
+	@FindBy(xpath = "//input[@id=‘searchKeyword’]")
+			public WebElement searchEnter;
+
+		@FindBy(xpath = "//i[@class=‘simple-icon-pencil f-size-12 ml10’][1]")
+			public WebElement pencilIcon;
 
 	@FindBy(xpath = "//table[@class='capitalize admin_portfolio_table table']//tbody//tr[1]//td[1]//a")
 	public WebElement credgenicsCompany;
 	
-	@FindBy(css = "#searchKeyword")
-	public WebElement searchEnter;
 	
 	
 	@FindBy(xpath = "//table[@class='capitalize admin_portfolio_table table']//tbody//tr[1]//td[1]//a//span[1]")
@@ -90,9 +97,7 @@ public class PortFolioPage extends PageBase {
 	public WebElement selectTag;
 	
 	
-	
-	@FindBy(className  = "simple-icon-pencil f-size-12 ml10")
-	public WebElement pencilIcon;
+
 	
 	
 	@FindBy(xpath = "//span[normalize-space()='Provide Range']")
