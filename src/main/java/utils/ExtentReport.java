@@ -56,6 +56,10 @@ public class ExtentReport {
 	 public synchronized static  ExtentTest createParentNode(String methodName) {
 		
 
+		 
+		 
+		 
+		 
 		 parentLogger = extentThread.get().createNode(methodName);	
 		 return parentLogger;
 	 }
