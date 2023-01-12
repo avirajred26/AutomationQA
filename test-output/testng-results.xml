@@ -1,65 +1,554 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results total="1" passed="0" failed="0" skipped="1">
+<testng-results total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
+    <line>
+      <![CDATA[Trying to find Element By : By.xpath: //input[@id='username']]]>
+    </line>
+    <line>
+      <![CDATA[Found Element By : By.xpath: //input[@id='username']]]>
+    </line>
+    <line>
+      <![CDATA[Trying to find Element By : By.xpath: //input[@id='username']]]>
+    </line>
+    <line>
+      <![CDATA[Found Element By : By.xpath: //input[@id='username']]]>
+    </line>
+    <line>
+      <![CDATA[Trying to find Element By : By.xpath: //input[@id='password']]]>
+    </line>
+    <line>
+      <![CDATA[Found Element By : By.xpath: //input[@id='password']]]>
+    </line>
+    <line>
+      <![CDATA[Trying to find Element By : By.xpath: //input[@id='password']]]>
+    </line>
+    <line>
+      <![CDATA[Found Element By : By.xpath: //input[@id='password']]]>
+    </line>
+    <line>
+      <![CDATA[Trying to find Element By : By.xpath: //button[normalize-space()='Sign In']]]>
+    </line>
+    <line>
+      <![CDATA[Found Element By : By.xpath: //button[normalize-space()='Sign In']]]>
+    </line>
+    <line>
+      <![CDATA[Trying to find Element By : By.xpath: //nav/child::a]]>
+    </line>
+    <line>
+      <![CDATA[Found Element By : By.xpath: //nav/child::a]]>
+    </line>
+    <line>
+      <![CDATA[Trying to find Element By : By.xpath: //nav/child::a]]>
+    </line>
+    <line>
+      <![CDATA[Found Element By : By.xpath: //nav/child::a]]>
+    </line>
+    <line>
+      <![CDATA[Trying to find Element By : By.xpath: //nav/child::a]]>
+    </line>
+    <line>
+      <![CDATA[Found Element By : By.xpath: //nav/child::a]]>
+    </line>
+    <line>
+      <![CDATA[Trying to find Element By : By.xpath: //select[@aria-labelledby='sort-by']]]>
+    </line>
+    <line>
+      <![CDATA[Found Element By : By.xpath: //select[@aria-labelledby='sort-by']]]>
+    </line>
+    <line>
+      <![CDATA[Trying to find Element By : By.xpath: //select[@aria-labelledby='sort-by']]]>
+    </line>
+    <line>
+      <![CDATA[Found Element By : By.xpath: //select[@aria-labelledby='sort-by']]]>
+    </line>
+    <line>
+      <![CDATA[Trying to find Element By : By.xpath: //select[@aria-labelledby='sort-by']]]>
+    </line>
+    <line>
+      <![CDATA[Found Element By : By.xpath: //select[@aria-labelledby='sort-by']]]>
+    </line>
+    <line>
+      <![CDATA[Trying to find Element By : By.xpath: .//option[normalize-space(.) = "Date of topic update"]]]>
+    </line>
+    <line>
+      <![CDATA[Found Element By : By.xpath: .//option[normalize-space(.) = "Date of topic update"]]]>
+    </line>
+    <line>
+      <![CDATA[Trying to click on: [[[[ChromeDriver: chrome on WINDOWS (82308819435c7923832dfbdb1c2d6dc8)] -> xpath: //select[@aria-labelledby='sort-by']]] -> xpath: .//option[normalize-space(.) = "Date of topic update"]]]]>
+    </line>
+    <line>
+      <![CDATA[Clicked on: [[[[ChromeDriver: chrome on WINDOWS (82308819435c7923832dfbdb1c2d6dc8)] -> xpath: //select[@aria-labelledby='sort-by']]] -> xpath: .//option[normalize-space(.) = "Date of topic update"]]]]>
+    </line>
+    <line>
+      <![CDATA[Trying to find Element By : By.xpath: //input[@aria-label='filter']]]>
+    </line>
+    <line>
+      <![CDATA[Found Element By : By.xpath: //input[@aria-label='filter']]]>
+    </line>
+    <line>
+      <![CDATA[Trying to find Element By : By.xpath: //a[normalize-space()='Litigation Financing']]]>
+    </line>
+    <line>
+      <![CDATA[Found Element By : By.xpath: //a[normalize-space()='Litigation Financing']]]>
+    </line>
+    <line>
+      <![CDATA[Trying to find Element By : By.xpath: //div[@class='css-1k5s00q']//div/child::p[1]]]>
+    </line>
+    <line>
+      <![CDATA[Found Element By : By.xpath: //div[@class='css-1k5s00q']//div/child::p[1]]]>
+    </line>
+    <line>
+      <![CDATA[Trying to find Element By : By.xpath: //div[@class='css-1k5s00q']//div/child::p[1]]]>
+    </line>
+    <line>
+      <![CDATA[Found Element By : By.xpath: //div[@class='css-1k5s00q']//div/child::p[1]]]>
+    </line>
+    <line>
+      <![CDATA[Trying to find Element By : By.xpath: //div[@class='css-1k5s00q']//div/child::p[1]]]>
+    </line>
+    <line>
+      <![CDATA[Found Element By : By.xpath: //div[@class='css-1k5s00q']//div/child::p[1]]]>
+    </line>
+    <line>
+      <![CDATA[Trying to find Element By : By.xpath: //div[@class='css-1k5s00q']//div/child::p[1]]]>
+    </line>
+    <line>
+      <![CDATA[Found Element By : By.xpath: //div[@class='css-1k5s00q']//div/child::p[1]]]>
+    </line>
+    <line>
+      <![CDATA[Trying to find Element By : By.xpath: //div[@class='css-1k5s00q']//div/child::p[1]]]>
+    </line>
+    <line>
+      <![CDATA[Found Element By : By.xpath: //div[@class='css-1k5s00q']//div/child::p[1]]]>
+    </line>
+    <line>
+      <![CDATA[Trying to find Element By : By.xpath: //div[@class='css-1k5s00q']//div/child::p[1]]]>
+    </line>
+    <line>
+      <![CDATA[Found Element By : By.xpath: //div[@class='css-1k5s00q']//div/child::p[1]]]>
+    </line>
+    <line>
+      <![CDATA[Trying to find Element By : By.xpath: //div[@class='css-1k5s00q']//div/child::p[1]]]>
+    </line>
+    <line>
+      <![CDATA[Found Element By : By.xpath: //div[@class='css-1k5s00q']//div/child::p[1]]]>
+    </line>
+    <line>
+      <![CDATA[Trying to find Element By : By.xpath: //div[@class='css-1k5s00q']//div/child::p[1]]]>
+    </line>
+    <line>
+      <![CDATA[Found Element By : By.xpath: //div[@class='css-1k5s00q']//div/child::p[1]]]>
+    </line>
+    <line>
+      <![CDATA[Trying to find Element By : By.xpath: //div[@class='css-1k5s00q']//div/child::p[1]]]>
+    </line>
+    <line>
+      <![CDATA[Found Element By : By.xpath: //div[@class='css-1k5s00q']//div/child::p[1]]]>
+    </line>
+    <line>
+      <![CDATA[Trying to find Element By : By.xpath: //div[@class='css-1k5s00q']//div/child::p[1]]]>
+    </line>
+    <line>
+      <![CDATA[Found Element By : By.xpath: //div[@class='css-1k5s00q']//div/child::p[1]]]>
+    </line>
+    <line>
+      <![CDATA[Trying to find Element By : By.xpath: //div[@class='css-79elbk'][6]//div[1]//button[1]]]>
+    </line>
+    <line>
+      <![CDATA[Found Element By : By.xpath: //div[@class='css-79elbk'][6]//div[1]//button[1]]]>
+    </line>
+    <line>
+      <![CDATA[Trying to find Element By : By.xpath: //button[normalize-space()='Done']]]>
+    </line>
+    <line>
+      <![CDATA[Exception occured: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//button[normalize-space()='Done']"}
+  (Session info: chrome=108.0.5359.126)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.0.0-rc-1', revision: 'bc5511cbda'
+System info: host: 'IS-Y545-AL', ip: '192.168.1.35', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [82308819435c7923832dfbdb1c2d6dc8, findElement {using=xpath, value=//button[normalize-space()='Done']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.126, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\AVIRAJ~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:60887}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:60887/devtoo..., se:cdpVersion: 108.0.5359.126, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 82308819435c7923832dfbdb1c2d6dc8]]>
+    </line>
+    <line>
+      <![CDATA[Trying to find Element By : By.xpath: //button[normalize-space()='Done']]]>
+    </line>
+    <line>
+      <![CDATA[Exception occured: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//button[normalize-space()='Done']"}
+  (Session info: chrome=108.0.5359.126)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.0.0-rc-1', revision: 'bc5511cbda'
+System info: host: 'IS-Y545-AL', ip: '192.168.1.35', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [82308819435c7923832dfbdb1c2d6dc8, findElement {using=xpath, value=//button[normalize-space()='Done']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.126, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\AVIRAJ~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:60887}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:60887/devtoo..., se:cdpVersion: 108.0.5359.126, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 82308819435c7923832dfbdb1c2d6dc8]]>
+    </line>
+    <line>
+      <![CDATA[Trying to find Element By : By.xpath: //button[normalize-space()='Done']]]>
+    </line>
+    <line>
+      <![CDATA[Found Element By : By.xpath: //button[normalize-space()='Done']]]>
+    </line>
+    <line>
+      <![CDATA[Trying to find Element By : By.xpath: (//*[name()='svg'][@class='svg-inline--fa fa-angle-down '])[1]]]>
+    </line>
+    <line>
+      <![CDATA[Found Element By : By.xpath: (//*[name()='svg'][@class='svg-inline--fa fa-angle-down '])[1]]]>
+    </line>
+    <line>
+      <![CDATA[Trying to find Element By : By.xpath: //div[@class='chakra-menu__group']/child::a]]>
+    </line>
+    <line>
+      <![CDATA[Found Element By : By.xpath: //div[@class='chakra-menu__group']/child::a]]>
+    </line>
+    <line>
+      <![CDATA[Trying to find Element By : By.xpath: //div[@class='chakra-stack css-dk347']/child::p[1]]]>
+    </line>
+    <line>
+      <![CDATA[Found Element By : By.xpath: //div[@class='chakra-stack css-dk347']/child::p[1]]]>
+    </line>
+    <line>
+      <![CDATA[Trying to find Element By : By.xpath: (//button[@title='Unsubscribe'])[2]]]>
+    </line>
+    <line>
+      <![CDATA[Found Element By : By.xpath: (//button[@title='Unsubscribe'])[2]]]>
+    </line>
+    <line>
+      <![CDATA[Trying to find Element By : By.xpath: //button[normalize-space()='Done']]]>
+    </line>
+    <line>
+      <![CDATA[Exception occured: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//button[normalize-space()='Done']"}
+  (Session info: chrome=108.0.5359.126)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.0.0-rc-1', revision: 'bc5511cbda'
+System info: host: 'IS-Y545-AL', ip: '192.168.1.35', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [82308819435c7923832dfbdb1c2d6dc8, findElement {using=xpath, value=//button[normalize-space()='Done']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.126, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\AVIRAJ~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:60887}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:60887/devtoo..., se:cdpVersion: 108.0.5359.126, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 82308819435c7923832dfbdb1c2d6dc8]]>
+    </line>
+    <line>
+      <![CDATA[Trying to find Element By : By.xpath: //button[normalize-space()='Done']]]>
+    </line>
+    <line>
+      <![CDATA[Exception occured: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//button[normalize-space()='Done']"}
+  (Session info: chrome=108.0.5359.126)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.0.0-rc-1', revision: 'bc5511cbda'
+System info: host: 'IS-Y545-AL', ip: '192.168.1.35', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [82308819435c7923832dfbdb1c2d6dc8, findElement {using=xpath, value=//button[normalize-space()='Done']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.126, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\AVIRAJ~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:60887}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:60887/devtoo..., se:cdpVersion: 108.0.5359.126, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 82308819435c7923832dfbdb1c2d6dc8]]>
+    </line>
+    <line>
+      <![CDATA[Trying to find Element By : By.xpath: //button[normalize-space()='Done']]]>
+    </line>
+    <line>
+      <![CDATA[Found Element By : By.xpath: //button[normalize-space()='Done']]]>
+    </line>
   </reporter-output>
-  <suite started-at="2022-07-25T07:44:57Z" name="Default suite" finished-at="2022-07-25T07:44:57Z" duration-ms="23">
+  <suite started-at="2023-01-12T09:41:53Z" name="Suite" finished-at="2023-01-12T09:42:21Z" duration-ms="28803">
     <groups>
     </groups>
-    <test started-at="2022-07-25T07:44:57Z" name="Default test" finished-at="2022-07-25T07:44:57Z" duration-ms="23">
-      <class name="base.TestBase">
-        <test-method is-config="true" signature="extentFileCreation()[pri:0, instance:base.TestBase@27406a17]" started-at="2022-07-25T13:14:57Z" name="extentFileCreation" finished-at="2022-07-25T13:14:57Z" duration-ms="160" status="PASS">
+    <test started-at="2023-01-12T09:41:53Z" name="Test" finished-at="2023-01-12T09:42:21Z" duration-ms="28803">
+      <class name="newTestcase.Tc001_Subsribe_Test">
+        <test-method is-config="true" signature="extentFileCreation()[pri:0, instance:newTestcase.Tc001_Subsribe_Test@ab7395e]" started-at="2023-01-12T15:11:52Z" name="extentFileCreation" finished-at="2023-01-12T15:11:53Z" duration-ms="230" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- extentFileCreation -->
-        <test-method is-config="true" signature="launchApplication(java.lang.String)[pri:0, instance:base.TestBase@27406a17]" started-at="2022-07-25T13:14:57Z" name="launchApplication" finished-at="2022-07-25T13:14:57Z" duration-ms="0" status="FAIL">
-          <exception class="org.testng.TestNGException">
-            <message>
-              <![CDATA[
-Parameter 'browser' is required by @Configuration on method launchApplication but has not been marked @Optional or defined
-in /private/var/folders/26/gxg2cjsd2dl3xr3zj0xnlc300000gp/T/testng-eclipse-1730237745/testng-customsuite.xml]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.testng.TestNGException: 
-Parameter 'browser' is required by @Configuration on method launchApplication but has not been marked @Optional or defined
-in /private/var/folders/26/gxg2cjsd2dl3xr3zj0xnlc300000gp/T/testng-eclipse-1730237745/testng-customsuite.xml
-	at org.testng.internal.Parameters.createParameters(Parameters.java:154)
-	at org.testng.internal.Parameters.createParameters(Parameters.java:361)
-	at org.testng.internal.Parameters.createConfigurationParameters(Parameters.java:84)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:201)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:142)
-	at org.testng.TestRunner.beforeRun(TestRunner.java:656)
-	at org.testng.TestRunner.run(TestRunner.java:624)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
-	at org.testng.TestNG.run(TestNG.java:1064)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.testng.TestNGException -->
+        <test-method is-config="true" signature="launchApplication(java.lang.String)[pri:0, instance:newTestcase.Tc001_Subsribe_Test@ab7395e]" started-at="2023-01-12T15:11:53Z" name="launchApplication" finished-at="2023-01-12T15:11:59Z" duration-ms="6590" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApplication -->
-        <test-method is-config="true" signature="getFunctionName(java.lang.reflect.Method)[pri:0, instance:base.TestBase@27406a17]" started-at="2022-07-25T13:14:57Z" name="getFunctionName" finished-at="2022-07-25T13:14:57Z" duration-ms="0" status="SKIP">
+        <test-method is-config="true" signature="RequireLogin()[pri:0, instance:newTestcase.Tc001_Subsribe_Test@ab7395e]" started-at="2023-01-12T15:11:59Z" name="RequireLogin" finished-at="2023-01-12T15:12:00Z" duration-ms="1101" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Trying to find Element By : By.xpath: //input[@id='username']]]>
+            </line>
+            <line>
+              <![CDATA[Found Element By : By.xpath: //input[@id='username']]]>
+            </line>
+            <line>
+              <![CDATA[Trying to find Element By : By.xpath: //input[@id='username']]]>
+            </line>
+            <line>
+              <![CDATA[Found Element By : By.xpath: //input[@id='username']]]>
+            </line>
+            <line>
+              <![CDATA[Trying to find Element By : By.xpath: //input[@id='password']]]>
+            </line>
+            <line>
+              <![CDATA[Found Element By : By.xpath: //input[@id='password']]]>
+            </line>
+            <line>
+              <![CDATA[Trying to find Element By : By.xpath: //input[@id='password']]]>
+            </line>
+            <line>
+              <![CDATA[Found Element By : By.xpath: //input[@id='password']]]>
+            </line>
+            <line>
+              <![CDATA[Trying to find Element By : By.xpath: //button[normalize-space()='Sign In']]]>
+            </line>
+            <line>
+              <![CDATA[Found Element By : By.xpath: //button[normalize-space()='Sign In']]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- RequireLogin -->
+        <test-method is-config="true" signature="getFunctionName(java.lang.reflect.Method)[pri:0, instance:newTestcase.Tc001_Subsribe_Test@ab7395e]" started-at="2023-01-12T15:12:00Z" name="getFunctionName" finished-at="2023-01-12T15:12:00Z" duration-ms="4" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void newTestcase.Tc001_Subsribe_Test.portfolioTest(java.lang.String) throws java.lang.InterruptedException,java.io.IOException,com.opencsv.exceptions.CsvException]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getFunctionName -->
-        <test-method signature="RequireLogin()[pri:1, instance:base.TestBase@27406a17]" started-at="2022-07-25T13:14:57Z" name="RequireLogin" finished-at="2022-07-25T13:14:57Z" duration-ms="2" status="SKIP">
+        <test-method signature="portfolioTest(java.lang.String)[pri:2, instance:newTestcase.Tc001_Subsribe_Test@ab7395e]" started-at="2023-01-12T15:12:00Z" name="portfolioTest" data-provider="test" finished-at="2023-01-12T15:12:21Z" duration-ms="20808" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[S1]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
+            <line>
+              <![CDATA[Trying to find Element By : By.xpath: //nav/child::a]]>
+            </line>
+            <line>
+              <![CDATA[Found Element By : By.xpath: //nav/child::a]]>
+            </line>
+            <line>
+              <![CDATA[Trying to find Element By : By.xpath: //nav/child::a]]>
+            </line>
+            <line>
+              <![CDATA[Found Element By : By.xpath: //nav/child::a]]>
+            </line>
+            <line>
+              <![CDATA[Trying to find Element By : By.xpath: //nav/child::a]]>
+            </line>
+            <line>
+              <![CDATA[Found Element By : By.xpath: //nav/child::a]]>
+            </line>
+            <line>
+              <![CDATA[Trying to find Element By : By.xpath: //select[@aria-labelledby='sort-by']]]>
+            </line>
+            <line>
+              <![CDATA[Found Element By : By.xpath: //select[@aria-labelledby='sort-by']]]>
+            </line>
+            <line>
+              <![CDATA[Trying to find Element By : By.xpath: //select[@aria-labelledby='sort-by']]]>
+            </line>
+            <line>
+              <![CDATA[Found Element By : By.xpath: //select[@aria-labelledby='sort-by']]]>
+            </line>
+            <line>
+              <![CDATA[Trying to find Element By : By.xpath: //select[@aria-labelledby='sort-by']]]>
+            </line>
+            <line>
+              <![CDATA[Found Element By : By.xpath: //select[@aria-labelledby='sort-by']]]>
+            </line>
+            <line>
+              <![CDATA[Trying to find Element By : By.xpath: .//option[normalize-space(.) = "Date of topic update"]]]>
+            </line>
+            <line>
+              <![CDATA[Found Element By : By.xpath: .//option[normalize-space(.) = "Date of topic update"]]]>
+            </line>
+            <line>
+              <![CDATA[Trying to click on: [[[[ChromeDriver: chrome on WINDOWS (82308819435c7923832dfbdb1c2d6dc8)] -> xpath: //select[@aria-labelledby='sort-by']]] -> xpath: .//option[normalize-space(.) = "Date of topic update"]]]]>
+            </line>
+            <line>
+              <![CDATA[Clicked on: [[[[ChromeDriver: chrome on WINDOWS (82308819435c7923832dfbdb1c2d6dc8)] -> xpath: //select[@aria-labelledby='sort-by']]] -> xpath: .//option[normalize-space(.) = "Date of topic update"]]]]>
+            </line>
+            <line>
+              <![CDATA[Trying to find Element By : By.xpath: //input[@aria-label='filter']]]>
+            </line>
+            <line>
+              <![CDATA[Found Element By : By.xpath: //input[@aria-label='filter']]]>
+            </line>
+            <line>
+              <![CDATA[Trying to find Element By : By.xpath: //a[normalize-space()='Litigation Financing']]]>
+            </line>
+            <line>
+              <![CDATA[Found Element By : By.xpath: //a[normalize-space()='Litigation Financing']]]>
+            </line>
+            <line>
+              <![CDATA[Trying to find Element By : By.xpath: //div[@class='css-1k5s00q']//div/child::p[1]]]>
+            </line>
+            <line>
+              <![CDATA[Found Element By : By.xpath: //div[@class='css-1k5s00q']//div/child::p[1]]]>
+            </line>
+            <line>
+              <![CDATA[Trying to find Element By : By.xpath: //div[@class='css-1k5s00q']//div/child::p[1]]]>
+            </line>
+            <line>
+              <![CDATA[Found Element By : By.xpath: //div[@class='css-1k5s00q']//div/child::p[1]]]>
+            </line>
+            <line>
+              <![CDATA[Trying to find Element By : By.xpath: //div[@class='css-1k5s00q']//div/child::p[1]]]>
+            </line>
+            <line>
+              <![CDATA[Found Element By : By.xpath: //div[@class='css-1k5s00q']//div/child::p[1]]]>
+            </line>
+            <line>
+              <![CDATA[Trying to find Element By : By.xpath: //div[@class='css-1k5s00q']//div/child::p[1]]]>
+            </line>
+            <line>
+              <![CDATA[Found Element By : By.xpath: //div[@class='css-1k5s00q']//div/child::p[1]]]>
+            </line>
+            <line>
+              <![CDATA[Trying to find Element By : By.xpath: //div[@class='css-1k5s00q']//div/child::p[1]]]>
+            </line>
+            <line>
+              <![CDATA[Found Element By : By.xpath: //div[@class='css-1k5s00q']//div/child::p[1]]]>
+            </line>
+            <line>
+              <![CDATA[Trying to find Element By : By.xpath: //div[@class='css-1k5s00q']//div/child::p[1]]]>
+            </line>
+            <line>
+              <![CDATA[Found Element By : By.xpath: //div[@class='css-1k5s00q']//div/child::p[1]]]>
+            </line>
+            <line>
+              <![CDATA[Trying to find Element By : By.xpath: //div[@class='css-1k5s00q']//div/child::p[1]]]>
+            </line>
+            <line>
+              <![CDATA[Found Element By : By.xpath: //div[@class='css-1k5s00q']//div/child::p[1]]]>
+            </line>
+            <line>
+              <![CDATA[Trying to find Element By : By.xpath: //div[@class='css-1k5s00q']//div/child::p[1]]]>
+            </line>
+            <line>
+              <![CDATA[Found Element By : By.xpath: //div[@class='css-1k5s00q']//div/child::p[1]]]>
+            </line>
+            <line>
+              <![CDATA[Trying to find Element By : By.xpath: //div[@class='css-1k5s00q']//div/child::p[1]]]>
+            </line>
+            <line>
+              <![CDATA[Found Element By : By.xpath: //div[@class='css-1k5s00q']//div/child::p[1]]]>
+            </line>
+            <line>
+              <![CDATA[Trying to find Element By : By.xpath: //div[@class='css-1k5s00q']//div/child::p[1]]]>
+            </line>
+            <line>
+              <![CDATA[Found Element By : By.xpath: //div[@class='css-1k5s00q']//div/child::p[1]]]>
+            </line>
+            <line>
+              <![CDATA[Trying to find Element By : By.xpath: //div[@class='css-79elbk'][6]//div[1]//button[1]]]>
+            </line>
+            <line>
+              <![CDATA[Found Element By : By.xpath: //div[@class='css-79elbk'][6]//div[1]//button[1]]]>
+            </line>
+            <line>
+              <![CDATA[Trying to find Element By : By.xpath: //button[normalize-space()='Done']]]>
+            </line>
+            <line>
+              <![CDATA[Exception occured: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//button[normalize-space()='Done']"}
+  (Session info: chrome=108.0.5359.126)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.0.0-rc-1', revision: 'bc5511cbda'
+System info: host: 'IS-Y545-AL', ip: '192.168.1.35', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [82308819435c7923832dfbdb1c2d6dc8, findElement {using=xpath, value=//button[normalize-space()='Done']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.126, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\AVIRAJ~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:60887}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:60887/devtoo..., se:cdpVersion: 108.0.5359.126, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 82308819435c7923832dfbdb1c2d6dc8]]>
+            </line>
+            <line>
+              <![CDATA[Trying to find Element By : By.xpath: //button[normalize-space()='Done']]]>
+            </line>
+            <line>
+              <![CDATA[Exception occured: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//button[normalize-space()='Done']"}
+  (Session info: chrome=108.0.5359.126)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.0.0-rc-1', revision: 'bc5511cbda'
+System info: host: 'IS-Y545-AL', ip: '192.168.1.35', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [82308819435c7923832dfbdb1c2d6dc8, findElement {using=xpath, value=//button[normalize-space()='Done']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.126, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\AVIRAJ~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:60887}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:60887/devtoo..., se:cdpVersion: 108.0.5359.126, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 82308819435c7923832dfbdb1c2d6dc8]]>
+            </line>
+            <line>
+              <![CDATA[Trying to find Element By : By.xpath: //button[normalize-space()='Done']]]>
+            </line>
+            <line>
+              <![CDATA[Found Element By : By.xpath: //button[normalize-space()='Done']]]>
+            </line>
+            <line>
+              <![CDATA[Trying to find Element By : By.xpath: (//*[name()='svg'][@class='svg-inline--fa fa-angle-down '])[1]]]>
+            </line>
+            <line>
+              <![CDATA[Found Element By : By.xpath: (//*[name()='svg'][@class='svg-inline--fa fa-angle-down '])[1]]]>
+            </line>
+            <line>
+              <![CDATA[Trying to find Element By : By.xpath: //div[@class='chakra-menu__group']/child::a]]>
+            </line>
+            <line>
+              <![CDATA[Found Element By : By.xpath: //div[@class='chakra-menu__group']/child::a]]>
+            </line>
+            <line>
+              <![CDATA[Trying to find Element By : By.xpath: //div[@class='chakra-stack css-dk347']/child::p[1]]]>
+            </line>
+            <line>
+              <![CDATA[Found Element By : By.xpath: //div[@class='chakra-stack css-dk347']/child::p[1]]]>
+            </line>
+            <line>
+              <![CDATA[Trying to find Element By : By.xpath: (//button[@title='Unsubscribe'])[2]]]>
+            </line>
+            <line>
+              <![CDATA[Found Element By : By.xpath: (//button[@title='Unsubscribe'])[2]]]>
+            </line>
+            <line>
+              <![CDATA[Trying to find Element By : By.xpath: //button[normalize-space()='Done']]]>
+            </line>
+            <line>
+              <![CDATA[Exception occured: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//button[normalize-space()='Done']"}
+  (Session info: chrome=108.0.5359.126)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.0.0-rc-1', revision: 'bc5511cbda'
+System info: host: 'IS-Y545-AL', ip: '192.168.1.35', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [82308819435c7923832dfbdb1c2d6dc8, findElement {using=xpath, value=//button[normalize-space()='Done']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.126, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\AVIRAJ~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:60887}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:60887/devtoo..., se:cdpVersion: 108.0.5359.126, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 82308819435c7923832dfbdb1c2d6dc8]]>
+            </line>
+            <line>
+              <![CDATA[Trying to find Element By : By.xpath: //button[normalize-space()='Done']]]>
+            </line>
+            <line>
+              <![CDATA[Exception occured: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//button[normalize-space()='Done']"}
+  (Session info: chrome=108.0.5359.126)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.0.0-rc-1', revision: 'bc5511cbda'
+System info: host: 'IS-Y545-AL', ip: '192.168.1.35', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [82308819435c7923832dfbdb1c2d6dc8, findElement {using=xpath, value=//button[normalize-space()='Done']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.126, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\AVIRAJ~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:60887}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:60887/devtoo..., se:cdpVersion: 108.0.5359.126, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 82308819435c7923832dfbdb1c2d6dc8]]>
+            </line>
+            <line>
+              <![CDATA[Trying to find Element By : By.xpath: //button[normalize-space()='Done']]]>
+            </line>
+            <line>
+              <![CDATA[Found Element By : By.xpath: //button[normalize-space()='Done']]]>
+            </line>
           </reporter-output>
-        </test-method> <!-- RequireLogin -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:base.TestBase@27406a17]" started-at="2022-07-25T13:14:57Z" name="tearDown" finished-at="2022-07-25T13:14:57Z" duration-ms="0" status="SKIP">
+        </test-method> <!-- portfolioTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:newTestcase.Tc001_Subsribe_Test@ab7395e]" started-at="2023-01-12T15:12:21Z" name="tearDown" finished-at="2023-01-12T15:12:21Z" duration-ms="268" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- base.TestBase -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      </class> <!-- newTestcase.Tc001_Subsribe_Test -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>

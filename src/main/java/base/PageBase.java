@@ -102,4 +102,12 @@ public class PageBase {
 			                action.moveToElement(el).moveByOffset((width/2)-2, 0).click().perform();
 		}
 		
+		
+		public static void clickonsvgElement(WebElement el) {
+			
+			((JavascriptExecutor) pbDriver).executeScript("arguments[0].dispatchEvent(new MouseEvent('click', {view: window, bubbles:true, cancelable: true}))", el);
+
+	}
+
+		
 }

@@ -37,7 +37,7 @@ import com.opencsv.exceptions.CsvException;
 	 	public static int rowNo=0;
 		public static CSVParser csvParser;
 		public static Reader reader;
-		public static String CSVPath = System.getProperty("user.dir")+ "/src/main/java/config/ParentCSV.csv";
+		public static String CSVPath = System.getProperty("user.dir")+ "/src/main/java/config/Parent.csv";
 		
 		public static String CSVPathReader ;
 		
@@ -71,7 +71,7 @@ import com.opencsv.exceptions.CsvException;
 	        
 	           	 
 	           	 if(csvRecord.get("TestCase").equalsIgnoreCase(TestCaseName)) {
-	           		  CSVPathReader = System.getProperty("user.dir")+returnCSVType(csvRecord.get("Service_Type"));
+	           		  CSVPathReader = System.getProperty("user.dir")+returnCSVType(csvRecord.get("Service"));
 	           		  System.out.println(CSVPathReader);
 	                  
 	           	 }  
@@ -157,7 +157,7 @@ import com.opencsv.exceptions.CsvException;
 	        	for (CSVRecord csvRecord : csvParser) {
 	        		System.out.println(csvRecord.get(ColName).trim());
 	           	 
-	           	 if(csvRecord.get("Scenario").equalsIgnoreCase(Scenario)) {
+	           	 if(csvRecord.get("﻿Scenario").equalsIgnoreCase(Scenario)) {
 	           		 
 	           		 String name = csvRecord.get(ColName);
 	                    return name;
@@ -180,10 +180,10 @@ import com.opencsv.exceptions.CsvException;
 			
 			
 			switch (value) {
-			case "Recovery": 
+			case "All Topic": 
 				
 				
-				return "/src/main/java/config/RecoveryCSV.csv";
+				return "/src/main/java/config/Alltopic.csv";
 				
 				case "Notice": 
 							
@@ -249,7 +249,7 @@ import com.opencsv.exceptions.CsvException;
 			        
 		        	for (CSVRecord csvRecord : csvParser) {
 		        		
-		           	 if(csvRecord.get("Scenario").equalsIgnoreCase(value)) {
+		           	 if(csvRecord.get("﻿Scenario").equalsIgnoreCase(value)) {
 		           		 records.add(value);
 		           		 
 		           		return records;

@@ -5,22 +5,7 @@
   <test name="Test">
     <parameter name="browser" value="Chrome"/>
     <classes>
-      <class name="newTestcase.Tc001_Portfolio_Test"/>
+      <class name="newTestcase.Tc001_Subsribe_Test"/>
     </classes>
   </test> <!-- Test -->
-  <test parallel="none" name="Test(failed)">
-    <parameter name="browser" value="Chrome"/>
-    <classes>
-      <class name="newTestcase.Tc001_Portfolio_Test">
-        <methods>
-          <include name="getFunctionName"/>
-          <include name="RequireLogin"/>
-          <include name="launchApplication"/>
-          <include name="portfolioTest"/>
-          <include name="extentFileCreation"/>
-          <include name="tearDown"/>
-        </methods>
-      </class> <!-- newTestcase.Tc001_Portfolio_Test -->
-    </classes>
-  </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

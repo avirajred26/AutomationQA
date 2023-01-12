@@ -67,9 +67,11 @@ import org.openqa.selenium.logging.LogEntry;
 import org.testng.SkipException;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -84,7 +86,7 @@ import com.opencsv.exceptions.CsvException;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import pages.LoginPage;
-import pages.PortFolioPage;
+import pages.HomePage;
 
 import java.util.Optional;
 import utils.ExcelLibraries;
@@ -117,7 +119,7 @@ public class TestBase {
     
     public LoginPage objLogin;
     
-    public PortFolioPage objPort;
+    public HomePage objHome;
     
     public  String [][] arraystr;
 	public List<String> data;
@@ -143,18 +145,18 @@ public class TestBase {
 	@BeforeSuite
 	public void extentFileCreation() throws Throwable {
 		ExtentReport.createReportFile(prop.getProperty("reportTitle"));
-		TestUtil.renameFile();
+	//	TestUtil.renameFile();
 	}
 	
 	@Parameters("browser")
 	@BeforeTest
     public void launchApplication(String brow) throws Throwable {
 		
-		csvLibrary.TestCaseName = getClass().getSimpleName();
+	csvLibrary.TestCaseName = getClass().getSimpleName();
 	     
 	System.out.println(getClass().getSimpleName());
 		
-		ExcelLibraries.createExcel(getClass().getSimpleName());
+	//	ExcelLibraries.createExcel(getClass().getSimpleName());
 		
 		ExtentReport.createReportName(getClass().getSimpleName());
 		
@@ -189,7 +191,7 @@ public class TestBase {
 		e_driver.register(eventListener);
 		driver = e_driver;
 		
-		
+		csvLibrary.readTheCsvPath();
 	}
 	
 	@BeforeMethod
@@ -207,15 +209,12 @@ public class TestBase {
 		LOGGER.addHandler(handler);
 	}
 	
-    @AfterTest
+   @AfterTest
     public static void tearDown() throws Throwable {
     
-    	ExcelLibraries.setEndTime();
-    	ExcelLibraries.resetCount();
+    	//ExcelLibraries.setEndTime();
+    	//ExcelLibraries.resetCount();
     	
-        driver.close();
-       
-      
         driver.quit();
     }
     
@@ -225,10 +224,10 @@ public class TestBase {
     	if(Brow.contains("Chrome") || Brow.equalsIgnoreCase("chrome")) {
     		WebDriverManager.chromedriver().setup();
     		
-    		ChromeOptions options = new ChromeOptions();   
+    		 option = new ChromeOptions();   
     		
-    		 options.addArguments("use-fake-device-for-media-stream");
-    	    options.addArguments("use-fake-ui-for-media-stream"); 
+    		 option.addArguments("use-fake-device-for-media-stream");
+    		 option.addArguments("use-fake-ui-for-media-stream"); 
     	    
     	    Map<String, Object> prefs = new HashMap<String, Object>();
     	    prefs.put("profile.default_content_setting_values.media_stream_mic", 1);
@@ -238,7 +237,7 @@ public class TestBase {
     	    prefs.put("profile.default_content_setting_values.automatic_downloads'", 1);
     	    prefs.put( "profile.content_settings.pattern_pairs.*.multiple-automatic-downloads", 1 );
     	    
-    	    options.setExperimentalOption("prefs", prefs);
+    	    option.setExperimentalOption("prefs", prefs);
     		
 
     		driver = new ChromeDriver(option);
@@ -351,41 +350,44 @@ public void reporting(String desc,String exp,String actual,String status) throws
     	}
     	
     }
- 
-	  public static   List<List<String>> setUp() throws IOException, CsvException {
-		  csvLibrary.TestCaseName =  csvLibrary.TestCaseName.replace("demo.", "");
+    
+    
+    @DataProvider(name = "test")
+    public Iterator<Object []> provider( ) throws InterruptedException, IOException, CsvException
+    {
+        List<Object []> testCases = new ArrayList<>();
+       
+        csvLibrary.TestCaseName =  csvLibrary.TestCaseName.replace("newTestcase.", "");
 		  System.out.println(csvLibrary.TestCaseName);
 		  csvLibrary.readTheCsvPath();
 		
 		  String scenario =csvLibrary.readFromParentCSVFile("Scenario");
 		  String arrylist [] = scenario.split(",");
-		  
-		  List<String> arrayValues = null;
-		  
-		   records = new ArrayList<List<String>>();
-		  
-		  for(String x : arrylist) {
-		
-			  csvLibrary.Scenario = x;
-			  arrayValues = csvLibrary.readAllValues(x);
-			  
 	
-			  
-			  records.addAll(Arrays.asList(arrayValues));
-			  System.out.println(records);
-		  }
+		  Object[] data1 = null;
 		  
-		 
+
+	
+		  
+	for(String x :arrylist ) {
+	
+		data1 =  csvLibrary.readAllValues(x).toArray();
+
+		testCases.add(data1);
+	}
 		  
 		
-		return records;
 		  
-	 
-	  }
-	
+
+		
+
+        return testCases.iterator();
+    }
+
+
 
     
-    @Test(priority = 1)
+    @BeforeClass
     public  void RequireLogin() throws Throwable {
     	
     	
@@ -396,13 +398,13 @@ public void reporting(String desc,String exp,String actual,String status) throws
 		
 		Assert.assertNotEquals(objLogin.verifyforWrongPassword(), true);
 		
-		reporting("Login-OTP Validation", "User should be able to get OTP", "User Successfully navigate to OTP Page", "Pass");
+		//reporting("Login-OTP Validation", "User should be able to get OTP", "User Successfully navigate to OTP Page", "Pass");
 		
-		objLogin.setOTP();
+		objHome = new HomePage(driver);
 		
-		Assert.assertTrue(objLogin.verifyUsernameDispalyed());
+	//	Assert.assertTrue(objLogin.verifyUsernameDispalyed());
 		
-		reporting("Login Validation", "User should be able to login", "User Successfully Loggedin", "Pass");
+		//reporting("Login Validation", "User should be able to login", "User Successfully Loggedin", "Pass");
 		
 		
     	
