@@ -32,6 +32,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 import org.json.simple.parser.JSONParser;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -295,7 +296,25 @@ public class TestUtil {
 		  int showMe = min + randomNum.nextInt(max);
 		return showMe;
 	}
+
 	
+	public static String generateRandomWords()
+
+	{
+		String hello = "";
+	    Random random = new Random();
+	  
+	        char[] word = new char[random.nextInt(8)+3]; 
+	        for(int j = 0; j < word.length; j++)
+	        {
+	            word[j] = (char)('a' + random.nextInt(26));
+	        }
+	        	hello  = new String(word);;
+	    
+	    return hello;
+	}
+
+
 	
 	
 }

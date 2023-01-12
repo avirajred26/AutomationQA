@@ -13,9 +13,12 @@ import java.lang.reflect.Method;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
@@ -77,18 +80,18 @@ import com.google.gson.JsonParser;
 import com.mashape.unirest.http.JsonNode;
 import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
+import com.opencsv.exceptions.CsvException;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import pages.LoginPage;
 import pages.PortFolioPage;
 
 import java.util.Optional;
-
-import utils.CSVLibrary;
 import utils.ExcelLibraries;
 import utils.ExtentReport;
 import utils.TestUtil;
 import utils.WebEventListener;
+import utils.csvLibrary;
 
 
 
@@ -116,7 +119,10 @@ public class TestBase {
     
     public PortFolioPage objPort;
     
-    
+    public  String [][] arraystr;
+	public List<String> data;
+	  static List<List<String>> records;
+
     
   public static DevTools tool;
 	
@@ -144,7 +150,7 @@ public class TestBase {
 	@BeforeTest
     public void launchApplication(String brow) throws Throwable {
 		
-		CSVLibrary.TestCaseName = getClass().getSimpleName();
+		csvLibrary.TestCaseName = getClass().getSimpleName();
 	     
 	System.out.println(getClass().getSimpleName());
 		
@@ -154,7 +160,7 @@ public class TestBase {
 		
 	
 		
-		testStatus = Boolean.valueOf(CSVLibrary.readColValue("Status"));
+		testStatus = Boolean.valueOf(csvLibrary.readFromParentCSVFile("Status"));
 		
 		
 		if(!testStatus) {
@@ -165,10 +171,7 @@ public class TestBase {
 		LoggingPreferences preferences = new LoggingPreferences();
 		preferences.enable(LogType.CLIENT, Level.ALL);
 
-		 option = new ChromeOptions();
-		option.setCapability(CapabilityType.LOGGING_PREFS, preferences);
-		option.setCapability("goog:loggingPrefs", preferences);
-		option.addArguments();
+		 
 		
 		
 		
@@ -221,6 +224,23 @@ public class TestBase {
     	
     	if(Brow.contains("Chrome") || Brow.equalsIgnoreCase("chrome")) {
     		WebDriverManager.chromedriver().setup();
+    		
+    		ChromeOptions options = new ChromeOptions();   
+    		
+    		 options.addArguments("use-fake-device-for-media-stream");
+    	    options.addArguments("use-fake-ui-for-media-stream"); 
+    	    
+    	    Map<String, Object> prefs = new HashMap<String, Object>();
+    	    prefs.put("profile.default_content_setting_values.media_stream_mic", 1);
+    	    prefs.put("profile.default_content_setting_values.media_stream_camera", 1);
+    	    prefs.put("profile.default_content_setting_values.geolocation", 1);
+    	    prefs.put("profile.default_content_setting_values.notifications", 1);
+    	    prefs.put("profile.default_content_setting_values.automatic_downloads'", 1);
+    	    prefs.put( "profile.content_settings.pattern_pairs.*.multiple-automatic-downloads", 1 );
+    	    
+    	    options.setExperimentalOption("prefs", prefs);
+    		
+
     		driver = new ChromeDriver(option);
     	} 
     	
@@ -332,7 +352,38 @@ public void reporting(String desc,String exp,String actual,String status) throws
     	
     }
  
-    
+	  public static   List<List<String>> setUp() throws IOException, CsvException {
+		  csvLibrary.TestCaseName =  csvLibrary.TestCaseName.replace("demo.", "");
+		  System.out.println(csvLibrary.TestCaseName);
+		  csvLibrary.readTheCsvPath();
+		
+		  String scenario =csvLibrary.readFromParentCSVFile("Scenario");
+		  String arrylist [] = scenario.split(",");
+		  
+		  List<String> arrayValues = null;
+		  
+		   records = new ArrayList<List<String>>();
+		  
+		  for(String x : arrylist) {
+		
+			  csvLibrary.Scenario = x;
+			  arrayValues = csvLibrary.readAllValues(x);
+			  
+	
+			  
+			  records.addAll(Arrays.asList(arrayValues));
+			  System.out.println(records);
+		  }
+		  
+		 
+		  
+		
+		return records;
+		  
+	 
+	  }
+	
+
     
     @Test(priority = 1)
     public  void RequireLogin() throws Throwable {
@@ -341,7 +392,7 @@ public void reporting(String desc,String exp,String actual,String status) throws
     	
     	objLogin = new LoginPage(driver);
 		
-		objLogin.loginActivity(CSVLibrary.readColValue("UserName"), CSVLibrary.readColValue("Password"));
+		objLogin.loginActivity(csvLibrary.readFromParentCSVFile("UserName"), csvLibrary.readFromParentCSVFile("Password"));
 		
 		Assert.assertNotEquals(objLogin.verifyforWrongPassword(), true);
 		
@@ -353,22 +404,7 @@ public void reporting(String desc,String exp,String actual,String status) throws
 		
 		reporting("Login Validation", "User should be able to login", "User Successfully Loggedin", "Pass");
 		
-		objPort=new PortFolioPage(driver);
-		objPort.clickOnCompany("Click", "");
-		Thread.sleep(5000);
-		try {
-			Assert.assertEquals(true, objPort.portfolioActivity());
-			reporting("Portfolio Validation", "Table should be loaded", "Table loaded successfully", "Pass");
-		}catch(Exception e) {
-			reporting("Portfolio Validation", "Table should be loaded", "Table loaded unsuccessfully", "Fail");
-		}
 		
-		try {
-			Assert.assertEquals(true, objPort.searchLoan(CSVLibrary.readColValue("loan")));
-			reporting("Loan Search Validation", "Loan  should be show", "Loan shows successfully", "Pass");
-		}catch(Exception e) {
-			reporting("Loan Search Validation", "Loan should be show", "loan shows unsuccessfully", "Fail");
-		}
     	
     	
     	
