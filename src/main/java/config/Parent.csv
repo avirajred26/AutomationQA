@@ -1,2 +1,2 @@
 TestCase,UserName,Password,Status,Service,Scenario
-Tc001_Subsribe_Test,aviraj,Avisha@123,TRUE,All Topic,S1
+Tc001_Subsribe_Test,aviraj,pw,TRUE,All Topic,S1
