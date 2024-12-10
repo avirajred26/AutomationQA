@@ -339,10 +339,7 @@ public void reporting(String desc,String exp,String actual,String status) throws
 		// TODO Auto-generated catch block
 		e1.printStackTrace();
 	}
-    	 
-    	
-    		
-    		
+	
     	}catch(Exception e) {
     		
     		
@@ -365,55 +362,18 @@ public void reporting(String desc,String exp,String actual,String status) throws
 		  String arrylist [] = scenario.split(",");
 	
 		  Object[] data1 = null;
-		  
-
-	
-		  
+	  
 	for(String x :arrylist ) {
 	
 		data1 =  csvLibrary.readAllValues(x).toArray();
 
 		testCases.add(data1);
 	}
-		  
-		
-		  
-
-		
 
         return testCases.iterator();
     }
 
-
-
-    
-    @BeforeClass
-    public  void RequireLogin() throws Throwable {
-    	
-    	
-    	
-    	objLogin = new LoginPage(driver);
-		
-		objLogin.loginActivity(csvLibrary.readFromParentCSVFile("UserName"), csvLibrary.readFromParentCSVFile("Password"));
-		
-		Assert.assertNotEquals(objLogin.verifyforWrongPassword(), true);
-		
-		//reporting("Login-OTP Validation", "User should be able to get OTP", "User Successfully navigate to OTP Page", "Pass");
-		
-		objHome = new HomePage(driver);
-		
-	//	Assert.assertTrue(objLogin.verifyUsernameDispalyed());
-		
-		//reporting("Login Validation", "User should be able to login", "User Successfully Loggedin", "Pass");
-		
-		
-    	
-    	
-    	
-    }
-  
-    
-    
+ 
     /*public PackagePart put(final PackagePartName partName, final PackagePart part) {
     	  final String ppName = partName.getName();
     	  final StringBuilder concatSeg = new StringBuilder();
